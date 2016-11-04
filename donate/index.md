@@ -13,7 +13,7 @@ Note that donations are not tax-deductible.
 
 The Namecoin Marketing and Development Fund (operated by Phelix) accepts donations via Bitcoin and Namecoin.
 
-* BTC: 17Si1rdVd6gaYbwLq9NkXtGV9Qzt3NmTKa
+* BTC: 18kYBKu2pvj9XRRaAfUMbkm72QniwW2Dre
 * NMC: NDtPuyg3adscr6HCE1GUiSsKPtA8ewKgz3
 
 Warnings: Bitcoin and Namecoin do not provide anonymity for donations, although they may (under some circumstances) provide pseudonymity or location-anonymity.
