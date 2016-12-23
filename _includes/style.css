@@ -51,7 +51,7 @@ nav ul li {
     font-size: 4em;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     color: #FFF;
-    margin: 0;
+    margin: 0 0 0 45px;
     line-height: 1;
     text-shadow: 1px 1px 1px #000;
     opacity: 0.6;
