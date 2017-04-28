@@ -30,6 +30,7 @@ body > footer {
 body > footer > .container, body > footer > .container-fluid {
     opacity: 0.6;
     padding-top: 33px;
+    
 }
 
 
@@ -45,13 +46,14 @@ nav ul li {
     height: 350px;
     background: #292e3c url({{ "images/fancy.jpg" | prepend: site.baseurl }}) center top fixed;
     padding-top: 125px;
+    
 }
 
 #fancy-graphic p {
     font-size: 4em;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     color: #FFF;
-    margin: 0;
+    margin: 0px 0px 0px 40px !important;
     line-height: 1;
     text-shadow: 1px 1px 1px #000;
     opacity: 0.6;
