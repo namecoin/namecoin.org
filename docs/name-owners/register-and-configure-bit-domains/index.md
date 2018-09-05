@@ -5,28 +5,6 @@ title: Register and Configure .bit Domains
 
 {::options parse_block_html="true" /}
 
-## Register a domain name with a registrar
-
-__Please note: Use registrars only for experimental purposes, and for domain names or Namecoins you can afford to lose. A registrar can shut down operations at any time without advance warning. In this case you have no chance of retrieving your names and coins.__
-
-Advantages:
-
-* No need to download and run any piece of software
-* No need to keep an eye on the expiration time of the names you registered
-* No need to use Namecoins directly
-
-Disadvantages:
-
-* You don't own the domain name, i.e. you have no control over the private keys of the domain name
-* You cannot prove your ownership of the name
-* Registrar fees are higher than the fees for Namecoin-Qt or namecoind
-
-Example links:
-
-* [blockchain-dns.info](https://blockchain-dns.info/) (free domains, browser addons, proxy, web API, instant update, etc.)
-* [dotbit.me](https://dotbit.me/) (updates in ? time)
-* [peername.com](https://peername.com/) (updates in 7 days)
-
 ## Register a domain name using namecoind or Namecoin-Qt
 
 ### How much does it cost
