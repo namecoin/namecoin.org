@@ -29,8 +29,6 @@ title: Exchanges
 
 <span style="font-size:85%;">
 **Basic level exchanges**<br>
-[24change](https://24change.com)<br>
-[AltCoinTrader](https://www.altcointrader.co.za/nmc)<br>
 [Bleutrade](https://bleutrade.com/exchange/NMC/BTC)<br>
 [bx.in.th](https://bx.in.th)<br>
 [Cryptopia](https://www.cryptopia.co.nz/Exchange?market=NMC_BTC)<br>
@@ -38,8 +36,8 @@ title: Exchanges
 [Poloniex](https://poloniex.com)<br>
 [ShapeShift](https://shapeshift.io/)<br>
 [Tux Exchange](https://www.tuxexchange.com/trade?coin=NMC&market=BTC)<br>
-[Vircurex](https://vircurex.com)<sup>use with caution, see [discussion](https://bitcointalk.org/index.php?topic=49383.1200)</sup><br>
-[WEX](https://wex.nz/)<br>
+[WEX](https://wex.link/)<sup>use with caution, see [discussion](https://bitcointalk.org/index.php?topic=2181023.440)[news](https://www.coindesk.com/tag/wex)</sup><br><br>
+[Yobit](https://yobit.net/en/trade/NMC/BTC)
 </span>
 
 Gold, silver and bronze level exchanges donate to the Namecoin project. The higher the donation the higher the level. Note that the exchanges are not verified in any way.
