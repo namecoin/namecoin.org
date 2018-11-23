@@ -39,6 +39,6 @@ title: Exchanges
 [WEX](https://wex.link/)<sup>use with caution, see [discussion](https://bitcointalk.org/index.php?topic=2181023.440)[news](https://www.coindesk.com/tag/wex)</sup><br><br>
 [Yobit](https://yobit.net/en/trade/NMC/BTC)
 </span>
-
+<br>
 Gold, silver and bronze level exchanges donate to the Namecoin project. The higher the donation the higher the level. Note that the exchanges are not verified in any way.
 The current fees are 1000/300/100NMC per year. To get on the list contact exchanges a|t namecoin.org
