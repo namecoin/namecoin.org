@@ -36,7 +36,7 @@ title: Exchanges
 [Poloniex](https://poloniex.com)<br>
 [ShapeShift](https://shapeshift.io/)<br>
 [Tux Exchange](https://www.tuxexchange.com/trade?coin=NMC&market=BTC)<br>
-[WEX](https://wex.link/)<sup>use with caution, see [discussion](https://bitcointalk.org/index.php?topic=2181023.440)[news](https://www.coindesk.com/tag/wex)</sup><br><br>
+[WEX](https://wex.link/)<sup>use with caution, see [discussion](https://bitcointalk.org/index.php?topic=2181023.440)&[news](https://www.coindesk.com/tag/wex)</sup><br><br>
 [Yobit](https://yobit.net/en/trade/NMC/BTC)
 </span>
 <br>
