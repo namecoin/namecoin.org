@@ -36,8 +36,6 @@ title: Exchanges
 [Poloniex](https://poloniex.com)<br>
 [ShapeShift](https://shapeshift.io/)<br>
 [Tux Exchange](https://www.tuxexchange.com/trade?coin=NMC&market=BTC)<br>
-[WEX](https://wex.fit/)<sup>use with caution, see [discussion](https://bitcointalk.org/index.php?topic=2181023.440)and[news](https://www.coindesk.com/tag/wex)</sup><br><br>
-[Yobit](https://yobit.net/en/trade/NMC/BTC)
 </span>
 <br>
 Gold, silver and bronze level exchanges donate to the Namecoin project. The higher the donation the higher the level. Note that the exchanges are not verified in any way.
