@@ -31,7 +31,6 @@ title: Exchanges
 **Basic level exchanges**<br>
 [Bleutrade](https://bleutrade.com/exchange/NMC/BTC)<br>
 [bx.in.th](https://bx.in.th)<br>
-[Cryptopia](https://www.cryptopia.co.nz/Exchange?market=NMC_BTC)<br>
 [Livecoin](https://www.livecoin.net/)<br>
 [Poloniex](https://poloniex.com)<br>
 [ShapeShift](https://shapeshift.io/)<br>
