@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Atomic Name-Trading
+title: Atomic Name Trading
 ---
 
 {::options parse_block_html="true" /}
