@@ -1,11 +1,11 @@
 ---
 layout: page
-title: BitcoinJ Namecoin Name Lookup Client
+title: ConsensusJ-Namecoin
 ---
 
 {::options parse_block_html="true" /}
 
-This is documentation for the BitcoinJ-based name lookup client by Namecoin's Lead Application Engineer Jeremy Rand.  It is based on the following pre-existing projects:
+This is documentation for ConsensusJ-Namecoin (a lightweight SPV Namecoin name lookup client).  It is based on the following pre-existing projects:
 
 * libdohj by Ross Nicoll
 * ConsensusJ by Sean Gilligan
@@ -46,20 +46,20 @@ mvn clean install
 cd namecoin
 mvn clean install
 cd ../..
-git clone https://github.com/JeremyRand/bitcoinj-addons.git
-cd bitcoinj-addons
-git checkout consensusj-namecoin-0.3.1
+git clone https://github.com/JeremyRand/consensusj.git
+cd consensusj
+git checkout consensusj-namecoin-0.3.2.1
 ./gradlew clean :cj-nmc-daemon:assemble
 ~~~
 
-The binary will be created at `cj-nmc-daemon/build/libs/namecoinj-daemon-0.3.1-SNAPSHOT.jar`.
+The binary will be created at `cj-nmc-daemon/build/libs/namecoinj-daemon-0.3.2-SNAPSHOT.jar`.
 
 ## Running it
 
 **All API elements that are not directly taken from Namecoin Core (including all command-line arguments and all URL formats and JSON structures for the upstream REST API) are not guaranteed to have a stable API; they might be renamed, modified, or removed in the future.**
 
 ~~~
-java -jar ./namecoinj-daemon-0.3.1-SNAPSHOT.jar --connection.proxyenabled=false --connection.streamisolation=false
+java -jar ./namecoinj-daemon-0.3.2-SNAPSHOT.jar --connection.proxyenabled=false --connection.streamisolation=false
 ~~~
 
 The blockchain takes around 5 minutes to download.  Once it is fully synchronized, the RPC server will automatically start; it listens on port 8080.

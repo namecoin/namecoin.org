@@ -9,7 +9,7 @@ Namecoins are a token-like currency used to register and update Namecoin names. 
 
 ## Prerequisites
 
-To get namecoins, you first need a Namecoin wallet such as Namecoin Core.  See the [Downloads]({{site.baseurl}}download/) page.
+To get namecoins, you first need a [Namecoin wallet]({{site.baseurl}}get-started/name-wallets/).
 
 ## Exchanges
 

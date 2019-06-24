@@ -25,7 +25,7 @@ Namecoin can be used for TLS certificate validation.  This page covers Namecoin'
 | **Chromium (GNU/Linux)**<br>[Instructions](chromium/gnu-linux/) | Supported via NSS/sqlite. | Supported via Chromium.<br>Supported via NSS/sqlite. |
 | **Chromium (Windows)**<br>Automatically enabled by installer | Supported via CryptoAPI. | Supported via Chromium. |
 | **Firefox (GNU/Linux)**<br>[Instructions](firefox/gnu-linux/) | Supported via mozilla::pkix/NSS/sqlite. | Supported via mozilla::pkix/NSS/sqlite. |
-| **Firefox (Windows)**<br>[Instructions](firefox/windows/) | Supported via mozilla::pkix/NSS/sqlite. | Not supported. |
+| **Firefox (Windows)**<br>[Instructions](firefox/windows/) | Supported via mozilla::pkix/NSS/sqlite. | Supported via mozilla::pkix/NSS/sqlite. |
 | **Google Chrome (GNU/Linux)** | Supported via NSS/sqlite. | Supported via Chromium.<br>Supported via NSS/sqlite. |
 | **Google Chrome (Windows)**<br>Automatically enabled by installer | Supported via CryptoAPI. | Supported via Chromium. |
 | **Google Chrome Canary (GNU/Linux)** | Supported via NSS/sqlite. | Supported via Chromium.<br>Supported via NSS/sqlite. |

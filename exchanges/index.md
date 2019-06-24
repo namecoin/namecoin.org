@@ -29,11 +29,12 @@ title: Exchanges
 
 <span style="font-size:85%;">
 **Basic level exchanges**<br>
+
+[AltCoinTrader](https://www.altcointrader.co.za/nmc)<br>
 [Bleutrade](https://bleutrade.com/exchange/NMC/BTC)<br>
 [bx.in.th](https://bx.in.th)<br>
+[Hodl Hodl](https://www.hodlhodl.com/)<br>
 [Livecoin](https://www.livecoin.net/)<br>
-[Poloniex](https://poloniex.com)<br>
-[ShapeShift](https://shapeshift.io/)<br>
 [Tux Exchange](https://www.tuxexchange.com/trade?coin=NMC&market=BTC)<br>
 </span>
 <br>

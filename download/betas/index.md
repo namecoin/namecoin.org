@@ -38,7 +38,7 @@ As usual, it is a good idea to verify the hashes and signatures of these downloa
 
 ## ConsensusJ-Namecoin
 
-This is a lightweight SPV client that acts as a drop-in replacement for Namecoin Core's name lookup functionality (e.g. for browsing `.bit` domains with ncdns).  It synchronizes faster and uses less storage than Namecoin Core, but trusts Namecoin miners more than Namecoin Core does.
+ConsensusJ-Namecoin is a lightweight SPV client that acts as a drop-in replacement for Namecoin Core's name lookup functionality (e.g. for browsing `.bit` domains with ncdns).  It synchronizes faster and uses less storage than Namecoin Core, but trusts Namecoin miners more than Namecoin Core does.
 
 You need to have Java installed:
 
@@ -46,11 +46,11 @@ You need to have Java installed:
 * If you're using Windows, [download it from the Oracle website](https://www.java.com/en/download/manual.jsp).  **Make sure you right-click the `.exe` installer, click `Properties`, and click `Digital Signatures`.  It should be signed by `Oracle America, Inc.`  If it is not, do not install it.**
 * We're not sure about OS X.  If anyone can contribute instructions for OS X, let us know.
 
-**If you're using Windows, you will need to install the Microsoft Visual C++ 2010 Redistributable Package.  [Download for 64-bit Windows is here.](https://www.microsoft.com/en-us/download/details.aspx?id=14632)  [Download for 32-bit Windows is here.](https://www.microsoft.com/en-us/download/details.aspx?id=5555)**
+**If you're using Windows, you will need to install the [Microsoft Visual C++ 2010 Redistributable Package](https://www.microsoft.com/en-us/download/details.aspx?id=26999).**
 
-* [ConsensusJ-Namecoin v0.3.1 (cross-platform JAR)](https://www.namecoin.org/files/ConsensusJ-Namecoin/0.3.1/namecoinj-daemon-0.3.1-SNAPSHOT.jar)
-* [ConsensusJ-Namecoin v0.3.1 Signature (Release signed by Jeremy Rand)](https://www.namecoin.org/files/ConsensusJ-Namecoin/0.3.1/SHA256SUMS.asc)
-* [ConsensusJ-Namecoin source code (use the `consensusj-namecoin-0.3.1` branch)](https://github.com/JeremyRand/bitcoinj-addons/)
+* [ConsensusJ-Namecoin v0.3.2.1 (cross-platform JAR)](https://www.namecoin.org/files/ConsensusJ-Namecoin/0.3.2.1/namecoinj-daemon-0.3.2-SNAPSHOT.jar)
+* [ConsensusJ-Namecoin v0.3.2.1 Signature (Release signed by Jeremy Rand)](https://www.namecoin.org/files/ConsensusJ-Namecoin/0.3.2.1/SHA256SUMS.asc)
+* [ConsensusJ-Namecoin source code (use the `consensusj-namecoin-0.3.2.1` branch)](https://github.com/JeremyRand/consensusj/)
 * [libdohj source code](https://github.com/dogecoin/libdohj/)
 
 [Preliminary instructions are here.]({{site.baseurl}}docs/bitcoinj-name-lookups/)
@@ -63,21 +63,29 @@ You need to have Java installed:
 
 ## Electrum-NMC
 
-Electrum-NMC is a port of the lightweight Bitcoin wallet Electrum to Namecoin.
+Electrum-NMC is the Namecoin port of the lightweight Bitcoin wallet Electrum.
 
-* [Electrum-NMC v3.2.2.2 for GNU/Linux](https://www.namecoin.org/files/electrum-nmc/electrum-nmc-3.2.2.2/electrum-nmc-nc3.2.2.2.tar.gz)
-* [Electrum-NMC v3.2.2.2 for Windows (Standalone)](https://www.namecoin.org/files/electrum-nmc/electrum-nmc-3.2.2.2/electrum-nmc-nc3.2.2.2.exe)
-* [Electrum-NMC v3.2.2.2 for Windows (Portable)](https://www.namecoin.org/files/electrum-nmc/electrum-nmc-3.2.2.2/electrum-nmc-nc3.2.2.2-portable.exe)
-* [Electrum-NMC v3.2.2.2 for Windows (Installer)](https://www.namecoin.org/files/electrum-nmc/electrum-nmc-3.2.2.2/electrum-nmc-nc3.2.2.2-setup.exe)
-* [Electrum-NMC v3.2.2.2 Signature (Release signed by Jeremy Rand)](https://www.namecoin.org/files/electrum-nmc/electrum-nmc-3.2.2.2/SHA256SUMS.asc)
+[Preliminary Electrum-NMC documentation is here.]({{site.baseurl}}docs/electrum-nmc/)
+
+* [Electrum-NMC v3.3.6 for GNU/Linux, Windows, and macOS (Python tar.gz)](https://beta.namecoin.org/files/electrum-nmc/electrum-nmc-3.3.6/Electrum-NMC-3.3.6.tar.gz)
+* [Electrum-NMC v3.3.6 for GNU/Linux, Windows, and macOS (Python zip)](https://beta.namecoin.org/files/electrum-nmc/electrum-nmc-3.3.6/Electrum-NMC-3.3.6.zip)
+* [Electrum-NMC v3.3.6 for GNU/Linux (x86_64 AppImage)](https://beta.namecoin.org/files/electrum-nmc/electrum-nmc-3.3.6/electrum-nmc-nc3.3.6-x86_64.AppImage)
+* [Electrum-NMC v3.3.6.1 for Windows (Standalone Executable)](https://beta.namecoin.org/files/electrum-nmc/electrum-nmc-3.3.6.1/electrum-nmc-nc3.3.6.1.exe)
+* [Electrum-NMC v3.3.6.1 for Windows (Portable version)](https://beta.namecoin.org/files/electrum-nmc/electrum-nmc-3.3.6.1/electrum-nmc-nc3.3.6.1-portable.exe)
+* [Electrum-NMC v3.3.6.1 for Windows (Installer)](https://beta.namecoin.org/files/electrum-nmc/electrum-nmc-3.3.6.1/electrum-nmc-nc3.3.6.1-setup.exe)
+* [Electrum-NMC v3.3.6 for Android](https://beta.namecoin.org/files/electrum-nmc/electrum-nmc-3.3.6/Electrum_NMC-3.3.6.0-debug.apk)
+* [Electrum-NMC v3.3.6 Signature (Release signed by Jeremy Rand)](https://beta.namecoin.org/files/electrum-nmc/electrum-nmc-3.3.6/SHA256SUMS.asc)
 * [Electrum-NMC source code](https://github.com/namecoin/electrum-nmc/)
 
 ### Known Issues
 
 * AuxPoW support is still experimental.
-* No name transaction support.
 * P2SH and SegWit are not yet disabled in the GUI.  Don't use those features, since P2SH and SegWit aren't enforced on Namecoin yet, meaning that coins sent to such addresses can trivially be stolen.
-* Hardware wallets other than Trezor are untested and probably don't work.
+* Hardware wallets other than Trezor and Safe-T mini are untested and probably don't work.
+* Name transactions are not yet supported for hardware wallets.
+* The Android version doesn't yet have most of the Namecoin-specific GUI features.
+* AppImage binaries have not yet been tested.
+* macOS binaries are not yet available.
 * Build reproducibility is not yet tested.
 
 ## ncdns
@@ -153,7 +161,7 @@ See the [Namecoin Tor resolution documentation]({{site.baseurl}}docs/tor-resolut
 * dns-prop279 doesn't properly return error codes; all errors will be treated as `NXDOMAIN`.
 * dns-prop279 hasn't been carefully checked for proxy leaks.
 * Using dns-prop279 will make you stand out from other Tor users.
-* Stream isolation for streams opened by applications (e.g. Tor Browser) should work fine.  However, stream isolation metadata won't propagate to streams opened by the DNS server.  That means you should only use `dns-prop279` with a DNS server that will not generate outgoing traffic when you query it.  ncdns is probably fine as long as it's using a full-block-receive Namecoin node such as Namecoin Core or libdohj-namecoin in leveldbtxcache mode.  Unbound is not a good idea.
+* Stream isolation for streams opened by applications (e.g. Tor Browser) should work fine.  However, stream isolation metadata won't propagate to streams opened by the DNS server.  That means you should only use `dns-prop279` with a DNS server that will not generate outgoing traffic when you query it.  ncdns is probably fine as long as it's using a full-block-receive Namecoin node such as Namecoin Core or libdohj-namecoin in leveldbtxcache mode.  ncdns should **not** be used with headers-only name lookup clients such as Electrum-NMC.  Unbound is also not a good idea.
 * Nothing in dns-prop279 prevents the configured DNS server from caching lookups. If lookups are cached, this could be used to fingerprint users. ncdns has caching enabled by default.
 * DNSSEC support hasn't been tested at all, and is probably totally unsafe right now. Only use dns-prop279 when you fully trust the configured DNS server and your network path to it.
 * Build is not yet reproducible.

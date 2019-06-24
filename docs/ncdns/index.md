@@ -36,18 +36,18 @@ The ncdns installer wizard also sets up TLS certificate validation for `.bit` do
 
 ### Other OS's
 
-ncdns plain binaries (without install scripts) are available for most major operating systems.  These require installing a Namecoin name lookup client (e.g. Namecoin Core) and a DNS resolver (e.g. Dnssec-Trigger) separately, and manually configuring ncdns to integrate with them (see instructions below).  ncdns plain binaries are only recommended for advanced users at this time.
+ncdns plain binaries (without install scripts) are available for most major operating systems.  These require installing a [Namecoin name lookup client]({{site.baseurl}}get-started/name-lookup-clients/) and a DNS resolver (e.g. Dnssec-Trigger) separately, and manually configuring ncdns to integrate with them (see instructions below).  ncdns plain binaries are only recommended for advanced users at this time.
 
 TLS instructions for ncdns on GNU/Linux are at the [TLS Client Compatibility]({{site.baseurl}}docs/tls-client/) page.
 
 ## Supplying your own Namecoin node
 
-The ncdns Windows installer will offer to install Namecoin Core or the BitcoinJ/libdohj SPV client, and configure ncdns to use it.  However, there are several reasons why you might want to supply your own Namecoin node:
+The ncdns Windows installer will offer to install Namecoin Core or ConsensusJ-Namecoin, and configure ncdns to use it.  However, there are several reasons why you might want to supply your own Namecoin node:
 
 * You're not using Windows.
-* You want to use a Namecoin node that isn't Namecoin Core or the BitcoinJ/libdohj SPV client.
+* You want to use a Namecoin node that isn't Namecoin Core or ConsensusJ-Namecoin.
 * You want to run a Namecoin node on a different machine than ncdns.
-* You want to handle updating Namecoin Core separately from updating ncdns.
+* You want to handle updating your Namecoin node separately from updating ncdns.
 
 If you want to supply your own Namecoin node, you can follow these steps:
 

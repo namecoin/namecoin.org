@@ -17,7 +17,7 @@ Hopefully you've already done this.  Note that these instructions are not tested
 
 **If you're using the ncdns for Windows installer, you can skip this step.**
 
-This could be either Namecoin Core or the BitcoinJ name lookup client.  Note that if you're using Namecoin Core, you may wish to make Namecoin Core route its traffic over Tor (this procedure should be identical as what you'd do for Bitcoin Core).  The BitcoinJ name lookup client doesn't yet support routing its traffic over Tor.  If you're using the BitcoinJ name lookup client, it is strongly recommended that you use `leveldbtxcache` mode (this is the default if you're running the shortcut created by the ncdns for Windows installer; it is **not** the default if you're running it from the command line); this is because the other modes will generate network traffic that isn't subject to stream isolation.
+This could be either Namecoin Core or ConsensusJ-Namecoin.  Note that if you're using Namecoin Core, you may wish to make Namecoin Core route its traffic over Tor (this procedure should be identical as what you'd do for Bitcoin Core).  ConsensusJ-Namecoin doesn't yet support routing its traffic over Tor.  If you're using ConsensusJ-Namecoin, it is strongly recommended that you use `leveldbtxcache` mode (this is the default if you're running the shortcut created by the ncdns for Windows installer; it is **not** the default if you're running it from the command line); this is because the other modes will generate network traffic that isn't subject to stream isolation.  Electrum-NMC is not recommended because it will generate network traffic that isn't subject to stream isolation.
 
 ## Install ncdns
 
