@@ -12,7 +12,6 @@ title: Blockchain Explorers
 
 ### Currency operations only
 
-[Bchain.info](https://bchain.info/NMC/)<br>
 [BitInfoCharts](https://bitinfocharts.com/namecoin/explorer/)<br>
 [Tokenview](https://nmc.tokenview.com/)<br>
 
