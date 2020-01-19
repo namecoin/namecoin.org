@@ -24,7 +24,7 @@ Ryan is our security specialist and all-around-badass, handling everything from 
 **Lead Application Engineer & Community Organizer** <br>
 Jeremy is our .bit application specialist, and works on our codebases relating to TLS, Tor, and SPV, among other projects. Jeremy also handles fundraising (along with Phelix), and acts as our build engineer. Outside of Namecoin, he has a background in console game hacking (in particular, synchronizing multiple game consoles with each other and with virtual reality hardware) and educational robotics. Jeremy has a Master's degree in Computer Science and is a member of the [State Sponsored Actors Club](https://www.state-sponsored-actors.org/).
 
-OpenPGP (primary): `5174 0B7C 732D 572A 3140 4010 6605 55E1 F8F7 BF85` [(download public key)]({{site.baseurl}}JeremyRand.asc)<br>
+OpenPGP (primary): `5174 0B7C 732D 572A 3140 4010 6605 55E1 F8F7 BF85` 
 OpenPGP (Gitian signer): `9CDA F04A 7290 3BFE C095 9DBE 2DBE 339E 29F6 294C`
 
 ## Brandon "Brando" Roberts
