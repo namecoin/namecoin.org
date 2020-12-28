@@ -5,61 +5,26 @@ title: Namecoin Resolution with Tor
 
 {::options parse_block_html="true" /}
 
-Namecoin can be used for name resolution with Tor.  This guide covers how to set this up.
+Namecoin can be used for name resolution with Tor.  Several guides are available for setting this up, depending on your choice of software.
 
-**Warning: this is beta software, and is not suitable for production use.  It is being made available for testing purposes only.  It's using experimental API's that may be replaced or removed in the future, and it will make your Tor client stand out from everyone else.**
+## Guides
 
-## Install Tor
+* [ncprop279 with StemNS **(Use this if you're not sure)**](ncprop279/stemns/)
+* [ncprop279 with TorNS](ncprop279/torns/)
+* [dns-prop279 with StemNS](dns-prop279/stemns/)
+* [dns-prop279 with TorNS](dns-prop279/torns/)
 
-Hopefully you've already done this.  Note that these instructions are not tested in any way with Whonix, Tails, or Subgraph OS; such systems use control port filters that may cause problems.
+Want to decide for yourself?  Read on:
 
-## Install a Namecoin name lookup client
+## Should I use ncprop279 or dns-prop279?
 
-**If you're using the ncdns for Windows installer, you can skip this step.**
+*Average users are probably better off with ncprop279.*
 
-This could be either Namecoin Core or the BitcoinJ name lookup client.  Note that if you're using Namecoin Core, you may wish to make Namecoin Core route its traffic over Tor (this procedure should be identical as what you'd do for Bitcoin Core).  The BitcoinJ name lookup client doesn't yet support routing its traffic over Tor.  If you're using the BitcoinJ name lookup client, it is strongly recommended that you use `leveldbtxcache` mode (this is the default if you're running the shortcut created by the ncdns for Windows installer; it is **not** the default if you're running it from the command line); this is because the other modes will generate network traffic that isn't subject to stream isolation.
+dns-prop279 is more flexible, since it can access `.bit` domains that delegate to nameservers or otherwise require a recursive resolver.  However, that flexibility can be a footgun since recursive resolvers will typically cause proxy leaks.  dns-prop279 also requires a DNS server (e.g. ncdns or Unbound), whereas ncprop279 operates without a DNS server.  ncprop279 is substantially smaller in binary size than dns-prop279 combined with ncdns.
 
-## Install ncdns
+## Should I use StemNS or TorNS?
 
-See [ncdns documentation]({{site.baseurl}}docs/ncdns).
+*Average users are probably better off with StemNS.*
 
-You should install ncdns on a machine which has a trusted network path to the machine running Tor.  It is **not** necessary to install Dnssec-Trigger if you're only planning to use Namecoin resolution with Tor.
+TorNS uses the `txtorcon` library, while StemNS uses the `stem` library.  `stem` is a substantially smaller download.  StemNS focuses on security, while TorNS focuses on facilitating experimentation/development.
 
-**Warning: ncdns caches responses by default, which may pose a deanonymization vector.**
-
-## Install dns-prop279
-
-dns-prop279 can be downloaded at the [Beta Downloads]({{site.baseurl}}download/betas/#dns-prop279) page.  The build is not yet reproducible.
-
-If you want to build from source:
-
-~~~
-go get github.com/namecoin/dns-prop279
-~~~
-
-**Warning: all errors encountered by dns-prop279 will be reported as NXDOMAIN, even if that's not the actual error that occurred.**
-
-## Install TorNS
-
-TorNS (by meejah) is [available on GitHub.](https://github.com/meejah/TorNS)
-
-The `_service_to_command` configuration in [poc.py](https://github.com/meejah/TorNS/blob/5ed4abe5717a6fe713220dee853bb657b1064e8c/poc.py#L26) should look like this (assuming that ncdns is listening on 127.0.0.1 port 5391; fill in the path to where your dns-prop279 binary is located accordingly):
-
-~~~
-_service_to_command = {
-    "bit.onion": ['/path/to/dns-prop279', '-port', '5391', '@127.0.0.1'],
-    "bit": ['/path/to/dns-prop279', '-port', '5391', '@127.0.0.1'],
-}
-~~~
-
-If you're using Tor Browser Bundle, or are otherwise using a non-default Tor control port, you'll need to update the control port in `poc.py` as per the TorNS documentation.
-
-## Running it
-
-Make sure that the name lookup client, ncdns, and Tor are running.  Then, run `python poc.py` in the TorNS directory.  It should automatically configure Tor to use Namecoin for any domain name lookups that end in `.bit` or `.bit.onion`.  Here's a screenshot of [the Tor example rendezvous points page](http://federalistpapers.bit.onion/):
-
-![Screenshot.]({{site.baseurl}}images/screenshots/tor/tor-browser-onion-2018-08-01.png)
-
-Semantically, `.bit.onion` means that a domain name will always resolve to a `.onion` address (meaning that `.bit.onion` names are encrypted and authenticated regardless of whether TLS is used); `.bit` means that a domain name will resolve to any of `.onion`, IPv6, IPv4, or CNAME, meaning that `.bit` names are only encrypted and authenticated if TLS is used.  These semantics are open to revision later, as the Tor community evolves its canonical naming semantics.
-
-Namecoin name owners can specify a `.onion` domain via the `txt` field in the `_tor` subdomain of their name.  This specification is open to revision later, as the Tor community evolves its canonical naming specifications.  (In particular, it is possible that `TXT` records might be replaced with `SRV` records.)

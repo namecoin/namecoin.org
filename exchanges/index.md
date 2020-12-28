@@ -5,41 +5,31 @@ title: Exchanges
 
 {::options parse_block_html="true" /}
 
-<span style="font-size:130%;">&#8644;</span> You can buy and sell **Namecoins** here:
+<span class="exchanges-gold">&#8644;</span> You can buy and sell **Namecoins** here:
 
-<span id="decentralized-exchanges" style="font-size:130%;">
+<span id="decentralized-exchanges" class="exchanges-gold">
 **Decentralized exchanges**<br>
-[Bisq](https://bisq.network/)<br>
+{% assign shuffled_exchanges_decentralized = site.data.exchanges_decentralized | sample: 2 %}{% for i in shuffled_exchanges_decentralized %}{{ i }}<br>{% endfor %}
 </span>
 
-<span style="font-size:130%;">
+<span class="exchanges-gold">
 **Gold level exchanges**<br>
 ...<br>
 </span>
 
-<span style="font-size:115%;">
+<span class="exchanges-silver">
 **Silver level exchanges**<br>
 ...<br>
 </span>
 
-<span style="font-size:100%;">
+<span class="exchanges-bronze">
 **Bronze level exchanges**<br>
-...<br>
+{% assign shuffled_exchanges_bronze = site.data.exchanges_bronze | sample: 1 %}{% for i in shuffled_exchanges_bronze %}{{ i }}<br>{% endfor %}
 </span>
 
-<span style="font-size:85%;">
+<span class="exchanges-basic">
 **Basic level exchanges**<br>
-[24change](https://24change.com)<br>
-[AltCoinTrader](https://www.altcointrader.co.za/nmc)<br>
-[Bleutrade](https://bleutrade.com/exchange/NMC/BTC)<br>
-[bx.in.th](https://bx.in.th)<br>
-[Cryptopia](https://www.cryptopia.co.nz/Exchange?market=NMC_BTC)<br>
-[Livecoin](https://www.livecoin.net/)<br>
-[Poloniex](https://poloniex.com)<br>
-[ShapeShift](https://shapeshift.io/)<br>
-[Tux Exchange](https://www.tuxexchange.com/trade?coin=NMC&market=BTC)<br>
-[Vircurex](https://vircurex.com)<sup>use with caution, see [discussion](https://bitcointalk.org/index.php?topic=49383.1200)</sup><br>
-[WEX](https://wex.nz/)<br>
+{% assign shuffled_exchanges_basic = site.data.exchanges_basic | sample: 11 %}{% for i in shuffled_exchanges_basic %}{{ i }}<br>{% endfor %}
 </span>
 
 Gold, silver and bronze level exchanges donate to the Namecoin project. The higher the donation the higher the level. Note that the exchanges are not verified in any way.

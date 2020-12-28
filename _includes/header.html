@@ -16,8 +16,16 @@
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" tabindex="">Get Started</a>
                         <ul class="dropdown-menu">
                             <li><a href="{{site.baseurl}}download/">Download</a></li>
+                            <li><a href="{{site.baseurl}}get-started/name-wallets/">Name Wallets</a></li>
                             <li><a href="{{site.baseurl}}get-started/get-namecoins/">Get Namecoins</a></li>
                             <li><a href="{{site.baseurl}}docs/name-owners/">Docs for Domain Owners</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" tabindex="">Dot-Bit</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{site.baseurl}}dot-bit/">Home</a></li>
+                            <li><a href="{{site.baseurl}}dot-bit/browsing-instructions/">Browsing Instructions</a></li>
+                            <li><a href="{{site.baseurl}}dot-bit/security-model/">Security Model</a></li>
                         </ul>
                     </li>
                     <li><a href="{{site.baseurl}}docs/faq/">FAQ</a></li>
@@ -27,7 +35,6 @@
                             <li><a href="https://forum.namecoin.org">Forum&#10138;</a></li>
                             <li><a href="{{site.baseurl}}resources/presentations/">Presentations</a></li>
                             <li><a href="{{site.baseurl}}explorers/">Explorers</a></li>
-                            <li><a href="https://wiki.namecoin.org">Wiki&#10138;</a></li>
                             <li><a href="https://github.com/namecoin/meta/blob/master/roadmap.md">Roadmap&#10138;</a></li>
                         </ul>
                     </li>
@@ -45,6 +52,12 @@
 
 <div id="fancy-graphic"><div class="container-fluid"><p id="tagline">
 <noscript>
-Decentralized<br /><strong>secure</strong> names.
+{% assign random_tagline = site.data.taglines | sample %}
+{{ random_tagline }}
 </noscript>
+{% for tagline in site.data.taglines %}
+    <span class="candidate-tagline" hidden>
+        {{ tagline }}
+    </span>
+{% endfor %}
 </p></div></div>

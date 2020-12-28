@@ -11,6 +11,10 @@ So you'd like to support Namecoin?  Great!  There are several ways you can help 
 
 Donations help our developers pay the bills, and sometimes can even enable new developers to join the project.  [You can donate to the Namecoin project here.]({{site.baseurl}}donate/)
 
+## Buy (and wear) merchandise
+
+Our friends at Cypher Market sell [Namecoin-branded merchandise](https://www.cyphermarket.com/namecoin/) (e.g. T-shirts and stickers).  Not only is this a great way to spread the word, but Cypher Market also donates a cut of the profits to support Namecoin development.
+
 ## Run a full node
 
 Full nodes (Namecoin Core nodes) are the core of the Namecoin P2P network.  The more people run full nodes, and the more geographically and jurisdictionally diverse those full nodes are, the stronger the Namecoin P2P network becomes.  Please consider running [Namecoin Core]({{site.baseurl}}download/#namecoin-core-client-with-qt-name-tab) on as many of the following networks as you can:
@@ -33,6 +37,20 @@ Don't have a website?  Ask your favorite websites' operators to get a `.bit` dom
 ## Improve decentralized exchange liquidity
 
 Decentralized exchanges offer better security and privacy than centralized exchanges.  You can help make decentralized exchanges easier to use by posting buy and sell offers on them.  [See the list of decentralized exchanges here.]({{site.baseurl}}exchanges/#decentralized-exchanges)
+
+## Run a DNS seed
+
+DNS seeds help Namecoin users find peers.  You can run a DNS seed via [dnsseeder](https://github.com/gombadi/dnsseeder); ask us for details on Matrix or IRC.
+
+## Run an ElectrumX server
+
+ElectrumX servers help Electrum-NMC users synchronize the blockchain more quickly and securely.  You can run one by installing [ElectrumX](https://github.com/kyuupichan/electrumx).  Please consider running ElectrumX on as many of the following networks as you can:
+
+* Raw IPv4 address
+* Raw IPv6 address
+* Domain name pointing to IPv4 address
+* Domain name pointing to IPv6 address
+* Tor onion service
 
 ## Merge-mine Namecoin
 

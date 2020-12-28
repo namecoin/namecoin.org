@@ -7,7 +7,7 @@ tags: [Releases, libdohj Releases]
 
 If you watched [my lightning talk at Decentralized Web Summit 2016](https://archive.org/details/DecentralizedWeb20160609pt1?start=21490) (and if you didn't, shame on you -- go watch it right now along with [the other talks](https://archive.org/details/decentralizedwebsummit2016?&sort=publicdate)!), you'll remember that I announced SPV name lookups were working.  I'm happy to announce that that code is now published *in preliminary form* on GitHub, and binaries are available for testing.
 
-You can download it at the [Beta Downloads]({{site.baseurl}}download/betas/) page.  Once installed, it's basically a drop-in replacement for Namecoin Core for any application that does name lookups (such as ncdns).  Test reports are greatly appreciated so that we can do a proper release sooner.
+You can download it at the [Beta Downloads]({{site.baseurl}}download/betas/#consensusj-namecoin) page.  Once installed, it's basically a drop-in replacement for Namecoin Core for any application that does name lookups (such as ncdns).  Test reports are greatly appreciated so that we can do a proper release sooner.
 
 Initial syncup using a residential clearnet cable modem connection takes between 5 minutes and 10 minutes, depending on the settings.  (It is probably feasible to improve this.)  Lookup latency for `name_show` varies from 2 seconds to 4 milliseconds, depending on the settings.  (It is also probably feasible to improve this.)
 

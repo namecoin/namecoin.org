@@ -1,6 +1,6 @@
 <footer class="site-footer">
 
-        <div class="container-fluid" style="float:left;">
+        <div class="container-fluid" id="social">
             <ul class="list-inline">
                 <li><a href="https://github.com/namecoin"><i class="fa fa-github fa-2x" title="GitHub">GitHub</i></a></li>
                 <li><a href="https://twitter.com/Namecoin"><i class="fa fa-twitter fa-2x" title="Twitter">Twitter</i></a></li>
@@ -9,11 +9,29 @@
             </ul>
         </div>
 
-        <div class="container-fluid" style="float:right;">
-	    <a href="https://github.com/namecoin/namecoin.org/blob/master/{{page.path}}"><i>Submit corrections or improvements to this page</i></a>
+        <div class="container-fluid" id="page-source">
+            <a href="https://github.com/namecoin/namecoin.org/blob/master/{{page.path}}"><i>Submit corrections or improvements to this page</i></a>
         </div>
 
-        <script src="{{ "js/jquery-1.11.0.min.js" | prepend: site.baseurl }}"></script>
+        <div class="container-fluid" id="page-alternate">
+            <ul class="list-inline">
+                <li>This page is available via:</li>
+                <li><a href="https://www.namecoin.org{{page.url}}">DNS (namecoin.org)</a></li>
+                <li><a href="https://namecoin.bit{{page.url}}">Namecoin (namecoin.bit)</a></li>
+            </ul>
+        </div>
+
+        <div class="container-fluid" id="funders">
+            <p>Thanks to our funders:</p>
+            {% assign shuffled_sponsors = site.data.sponsors | sample: 7 %}
+            <ul class="list-inline">
+                {% for i in shuffled_sponsors %}
+                    <li class="funder">{{ i }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <script src="{{ "js/jquery-2.2.4.min.js" | prepend: site.baseurl }}"></script>
         <script src="{{ "js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
         <script src="{{ "js/script.js" | prepend: site.baseurl }}"></script>
         <script src="{{ "js/remove-nojs.js" | prepend: site.baseurl }}"></script>

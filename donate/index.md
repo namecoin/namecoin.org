@@ -23,6 +23,9 @@ Warnings: Bitcoin and Namecoin do not provide anonymity for donations, although 
 If you would like your donation to be earmarked for a specific issue/task, you can donate to one of these Bitcoin addresses.  If the issue/task you want to fund is not listed here, contact us and we can set up an address for it.
 
 * Decentralized search engine for Namecoin websites.  Expected to be feasible with 100 mBTC of donations.  18caYmssEY7PB72jSvTRgFgYiZubSs6cCq
+* Trezor wallet support for Namecoin.  19dnJGDq1ji2U9X2PeScJk6WqYgJ6RTpRJ
+
+Warnings: Bitcoin does not provide anonymity for donations, although it may (under some circumstances) provide pseudonymity or location-anonymity.
 
 ## ShapeShift Cryptocurrency Donations
 

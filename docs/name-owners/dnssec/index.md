@@ -5,7 +5,7 @@ title: DNSSEC delegation (for name owners)
 
 {::options parse_block_html="true" /}
 
-`.bit` domains can delegate to DNSSEC via the `ns` and `ds` JSON fields (which correspond to the `NS` and `DS` DNS record types).
+`.bit` domains can delegate to an external DNSSEC nameserver via the `ns` and `ds` JSON fields (which correspond to the `NS` and `DS` DNS record types).  The `ns` record is used to find the nameserver; the `ds` record is used to authenticate the records returned by the nameserver.
 
 ## Downsides of using `ns` and `ds`
 

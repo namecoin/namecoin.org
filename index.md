@@ -22,7 +22,6 @@ title: Namecoin
 * Human-meaningful Tor .onion domains.
 * Decentralized TLS (HTTPS) certificate validation, backed by blockchain consensus.
 * Access websites using the .bit top-level domain.
-* Proposed ideas such as file signatures, voting, bonds/stocks/shares, web of trust, notary services, and proof of existence. (To be implemented.)
 
 </div>
 
@@ -37,7 +36,7 @@ What does Namecoin do under the hood?
 * Like bitcoins, Namecoin names are difficult to censor or seize.
 * Lookups do not generate network traffic (improves privacy).
 
-**Namecoin** was the first fork of [Bitcoin](https://bitcoin.org) and still is one of the most innovative "altcoins".  It was first to implement [merged mining](https://bitcoin.stackexchange.com/questions/273/how-does-merged-mining-work) and a [decentralized DNS](https://bit.namecoin.org).  **Namecoin** was also the first solution to [Zooko's Triangle](https://en.wikipedia.org/wiki/Zooko%27s_triangle), the long-standing problem of producing a naming system that is simultaneously secure, decentralized, and human-meaningful.
+**Namecoin** was the first fork of [Bitcoin](https://bitcoin.org) and still is one of the most innovative "altcoins".  It was first to implement [merged mining](https://bitcoin.stackexchange.com/questions/273/how-does-merged-mining-work) and a [decentralized DNS]({{site.baseurl}}dot-bit/).  **Namecoin** was also the first solution to [Zooko's Triangle](https://en.wikipedia.org/wiki/Zooko%27s_triangle), the long-standing problem of producing a naming system that is simultaneously secure, decentralized, and human-meaningful.
 
 </div>
 </div>
@@ -45,9 +44,11 @@ What does Namecoin do under the hood?
 ## More Information
 
 * [Namecoin Identities](https://nameid.org)
-* [.bit DNS](https://bit.namecoin.org/)
+* [.bit DNS]({{site.baseurl}}dot-bit/)
 
 ## News
+
+([RSS Feed]({{site.baseurl}}feed.rss))
 
 {% for post in site.posts limit:10 %}
 {% assign content_words = post.content | number_of_words %}

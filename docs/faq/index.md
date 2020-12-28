@@ -5,6 +5,9 @@ title: FAQ
 
 {::options parse_block_html="true" /}
 
+* TOC
+{:toc}
+
 ## General
 
 ### How does Namecoin work? 
@@ -23,7 +26,7 @@ The cost includes a registration fee and a transaction fee. The registration fee
 
 ### How do I obtain namecoins? Can I mine them?
 
-You can mine them alongside bitcoins or trade them, see [How to get Namecoins](https://wiki.namecoin.org/index.php?title=How_to_get_Namecoins).
+You can mine them alongside bitcoins or trade them, see [How to get Namecoins]({{site.baseurl}}get-started/get-namecoins/).
 
 ### Who gets the registration fee? 
 
@@ -39,13 +42,13 @@ You have to renew or update a name every 35,999 blocks at the latest (between 20
 
 ### How do I browse a .bit domain?
 
-See [Browsing .bit Websites](https://bit.namecoin.org/browse.html).
+See [Browsing .bit Websites]({{site.baseurl}}dot-bit/browsing-instructions/).
 
 You can also use [ncdns]({{site.baseurl}}docs/ncdns) (experimental).  If you have the [ZeroNet](https://zeronet.io/) software installed, you can visit ZeroNet-enabled .bit domains.
 
 ### How do I register and host a .bit domain?
 
-[Register and Configure .bit Domains](https://wiki.namecoin.org/index.php?title=Register_and_Configure_.bit_Domains)
+See [Documentation for Name Owners]({{site.baseurl}}docs/name-owners/).
 
 ### Do I have to pay renewal fees? 
 
@@ -53,9 +56,13 @@ Other than the standard transaction fee, not at the moment.  This might change i
 
 ### What applications is Namecoin well-suited to?
 
-Consider that Namecoin values are limited to 520 bytes, and that the block size limit is somewhere between 500 kB and 1 MB.  (It's lower than Bitcoin's.)  Given that blocks occur every 10 minutes on average (usually fluctuating between 1 and 60 minutes), and that names have to be updated or renewed at least every 35,999 blocks, try to figure out whether your application would comfortably fit into blocks if your application became widespread.  Domain names and identities are applications that are near the upper limit of the scale that Namecoin can handle.  For example, misusing the Namecoin blockchain as a decentralized file storage is not feasible.  There are several other decentralized systems that serve this purpose way more efficiently.  In many cases, if you want to store data that is larger than 520 bytes, or that is updated very often, you may prefer to only store a content hash or a public key in the blockchain, along with information on where to get the full data.  The full data can then be authenticated using Namecoin as a trust anchor without storing the entire data in Namecoin.  An example of this usage is the ability to delegate .bit domain names to an external DNSSEC nameserver, authenticated by a DS record in the blockchain.
+Consider that Namecoin values are limited to 520 bytes, and that the block size limit is somewhere between 500 kB and 1 MB.  (It's lower than Bitcoin's.)  Given that blocks occur every 10 minutes on average (usually fluctuating between 1 and 60 minutes), and that names have to be updated or renewed at least every 35,999 blocks, try to figure out whether your application would comfortably fit into blocks if your application became widespread.  Domain names and identities are applications that are near the upper limit of the scale that Namecoin can handle.  For example, misusing the Namecoin blockchain as a decentralized file storage is not feasible.  There are several other decentralized systems that serve this purpose way more efficiently.  In many cases, if you want to store data that is larger than 520 bytes, or that is updated very often, you may prefer to only store a content hash or a public key in the blockchain, along with information on where to get the full data.  The full data can then be authenticated using Namecoin as a trust anchor without storing the entire data in Namecoin.  See our [Layer 2]({{ "docs/layer-2/" | relative_url }}) documentation for examples of such usage.
 
 If you're developing an application, consider doing your development on the Namecoin Testnet.  This prevents your testing from bloating the production blockchain, and also allows you to test without spending real money on names.  If more than one implementation might have the same use case, consider writing a spec so that incompatible implementations of similar ideas don't become a problem.
+
+### Do I need to download the entire Namecoin blockchain to use Namecoin?
+
+No, but you will get better security if you choose to do so.  A *full node* such as Namecoin Core gives you maximum security by downloading the entire blockchain and validating that all transactions comply with the Namecoin consensus rules.  However, if you don't wish to download the entire blockchain, you can instead use a *lightweight SPV node* such as Electrum-NMC, which only downloads block headers (along with transactions that are relevant to you), which are much smaller than the entire blockchain.  Namecoin also makes possible some security models that don't directly correspond to Bitcoin.  For example, the ConsensusJ-Namecoin node downloads block headers like Electrum-NMC, but also downloads the entire blocks from the past year only (i.e. all blocks that contain unexpired name transactions), which provides a security level somewhere between Electrum-NMC and Namecoin Core.
 
 ### What is the smallest currency unit of Namecoin called?
 
@@ -73,11 +80,15 @@ This is to prevent others from stealing your new name by registering it quickly 
 
 ### How are names represented? 
 
-Names and values are attached to special coins with a value of 0.01 NMC. Updates are performed by creating a transaction with the name's previous coin as input. Think of it like a colored coin.
+Names and values are attached to special coins with a value of 0.01 NMC. Updates are performed by creating a transaction with the name's previous coin as input. Think of it like a colored coin.  As far as Namecoin's consensus layer is concerned, names and their values are arbitrary binary blobs; any semantics assigned to those binary blobs (e.g. names being ASCII and values being JSON) are solely conventions used by higher-layer applications (e.g. ncdns).
 
 ### What if I spend that special coin by mistake? 
 
 The code prevents those coins from being used for normal payments.
+
+### Does Namecoin support "layer 2" technologies?
+
+Yes.  See our [Layer 2]({{ "docs/layer-2/" | relative_url }}) documentation.
 
 ### Why focus on getting browsers and OS's to support Namecoin instead of getting ISP's or public DNS resolvers (e.g. Google DNS) to do so?
 
@@ -106,6 +117,32 @@ Political concerns:
 * While getting Namecoin bundled with a major browser or OS certainly is a major undertaking, it's not at all clear that getting Namecoin resolution included by a major ISP or public DNS resolver would be easier.  Statistically (though exceptions certainly exist), software vendors tend to be more interested in innovating via software, security, and cryptography, whereas ISP's tend to be more interested in "innovating" via antitrust violations and net neutrality violations.  We believe that software vendors are therefore more likely to be interested in Namecoin (though we don't claim that no ISP's exist who might be persuadable).
 
 In addition, it's not clear that there would even be any significant benefit to counterbalance these concerns.  Namecoin intentionally makes different tradeoffs from the DNS.  For example, the DNS is much more scalable than Namecoin, can protect name owners from trivial deanonymization much better than Namecoin can, and doesn't rely on comparatively weak game-theoretic security properties as Namecoin does.  Namecoin has some benefits that counterbalance these weaknesses (e.g. the non-reliance on trusted third parties), but serving Namecoin data from public DNS infrastructure would provide the **union** of Namecoin's and the DNS's weaknesses, while providing the **intersection** of Namecoin's and the DNS's strengths.  Users who require a DNS-like naming system that works without any software installation are likely to be better off simply using the DNS.
+
+### Why focus on browser add-ons and OS packages instead of native browser and OS support?
+
+Because browser add-ons and OS packages are the standard method by which browser and OS vendors evaluate features for future inclusion.  In our discussions with browser vendors and OS vendors (even the ones who are enthusiastic about bundling Namecoin by default), one of the first things they ask for as a prerequisite to inclusion by default is a browser add-on or an OS package.
+
+### Why focus on getting existing browsers and OS's to support Namecoin instead of forking those browsers and OS's?
+
+Maintaining a fork of a web browser or OS is a substantial time investment, and attempting it without the necessary resources would inevitably result in delayed security updates, which would be unethical to our users.  Examples of browser and OS forks that have suffered from delayed security updates include IceCat and Trisquel.  One of the very few cases where a web browser fork has not resulted in a security disaster is Tor Browser, which has the following advantages:
+
+1. The Tor Project employs a dedicated team of full-time browser engineers who merge security fixes from Firefox.
+2. Tor Browser is based on the ESR variant of Firefox, which results in significantly less code churn from upstream.
+3. The Tor Browser developers are actively getting their patches against Firefox merged upstream by Mozilla.
+
+These advantages do not obviously apply to us, so Tor Browser's relative success would not obviously apply to us either.
+
+### Is Namecoin's support of atomic name trades a feature primarily aimed at squatters?
+
+Short answer: No.  The Namecoin developers are strongly against trademark infringement, and we do not endorse the behavior of users who squat on domains, either in Namecoin or the DNS.
+
+Longer answer from a high-level point of view:
+
+In a naming system, the ability to transfer ownership of a name to a new keypair has significant security benefits.  For example, it allows a corporation to replace the employee(s) who control a name, and it also allows secure recovery of a name whose keys are believed to have been compromised but which has not yet been stolen.  As a result, Namecoin supports the ability to transfer names to a new keypair.  In a naming system that doesn't enforce legal identity verification, it is not possible to automatically disambiguate a transfer between two keypairs that belong to the same corporation or person from a transfer between two different people.  As a result, Namecoin supports the ability to transfer names to a different corporation or person.  Since it is always possible for two parties to coordinate a payment out-of-band, it is not possible for a cryptographic naming system to prevent name sales without preventing name donations.  As a result, Namecoin supports the ability to sell a name.  Given that Namecoin supports the ability to sell a name, there isn't really much benefit to not supporting atomic name sales: the only people who would benefit from not supporting atomic name sales are scammers.  There are plenty of legitimate reasons why someone might want to sell a name (which we assume is the main reason why selling DNS names isn't banned, even though in the DNS it's usually quite easy on a technical level to seize domain names that are listed for sale).  And we don't think that the legitimate users of that functionality deserve to be unnecessarily exposed to counterparty risk.
+
+Longer answer from a low-level point of view:
+
+Namecoin is a fork of Bitcoin, and therefore Namecoin (like Bitcoin) supports a wide variety of smart contract schemes, including the ability for a transaction to have an arbitrary number of outputs (thereby making multiple payments atomically).  Because Namecoin represents names as transaction outputs, it is naturally possible to atomically transfer a name in combination with a currency payment.  This isn't a feature that Namecoin was specifically designed to support, it's simply a feature that naturally exists, which would have required extra effort to not support.  Technically, it would be possible to softfork Namecoin to ban name outputs from coexisting in a transaction with currency outputs, but in practice this would have detrimental effects unrelated to atomic name trades, because it would also ban change outputs from single-party name transactions.  There *is* a restriction in Namecoin's consensus rules that prevents two name outputs from being created atomically.  As far as we're aware, there is no documented reason for this rule (none of us were around to ask when the rule was first created, and Vince isn't around for us to ask anymore), and this rule also has harmful side effects that are unrelated to atomic name trades, e.g. it prevents CoinJoin-style constructions for name transactions.  Because CoinJoin is useful for both scalability and privacy, we would prefer that this rule be removed, and it is possible that a future consensus fork will do so.
 
 ## Comparison of Namecoin to other projects
 
@@ -139,9 +176,31 @@ In general, the Namecoin developers attempt to minimize our patchset against Bit
 * Pseudonymous founder: Vince, like Satoshi, never revealed his real-world identity and disappeared around the same time, leaving Namecoin project wild in the open, to flourish only thanks to the help of enthusiasts in the FLOSS community.
 * Free / libre / open-source platform: Anyone can improve the code and report issues on [GitHub](https://github.com/namecoin/) and even use it on other projects.
 
+### Does Namecoin mandate usage of Bitcoin as a parent chain?
+
+No.  Namecoin's merged mining can use *any* Hashcash-SHA256D blockchain as a parent chain.  Bitcoin is the most commonly used parent chain, but others (such as BCH) are sometimes used as parent chains as well.  Note that this implies that Namecoin's hashrate and difficulty can theoretically be higher than those of Bitcoin.  (In fact, Namecoin's 24-hour hashrate occasionally does exceed that of Bitcoin.)
+
 ### How does Namecoin compare to Tor Onion Services?
 
-The Tor Project's Onion Services (which have a `.onion` top-level domain) use domains which are a public key hash.  This means that their domain names are not human-meaningful, whereas Namecoin domain names are human-meaningful.  Namecoin's `.bit` domains can point to `.onion` domains, providing a human-meaningful naming layer on top of Tor Onion Services.  Blockchain-based systems like Namecoin are, at this time, unable to match the cryptographic security guarantees (against impersonation or deanonymization attacks) that systems like Onion Service names provide when used directly, but Namecoin's human-meaningful names do make Namecoin more resistant than Onion Service names to some classes of attacks that exploit human psychology rather than breaking cryptography.  For example, humans have trouble remembering a public key hash or recognizing a public key hash as the correct one; this is much better with meaningful names such as Namecoin names (or ICANN DNS names).  Attackers can exploit this property of Onion Service names in order to trick users into visiting the incorrect website.  We believe that both systems serve a useful purpose, and determining whether direct usage of Onion Service names or Namecoin naming for Onion Services is more secure for a given user requires consideration of that user's threat model.
+The Tor Project's Onion Services (which have a `.onion` top-level domain) use domains which are a public key hash.  This means that their domain names are not human-meaningful, whereas Namecoin domain names are human-meaningful.  Namecoin's `.bit` domains can point to `.onion` domains, providing a human-meaningful naming layer on top of Tor Onion Services.  Blockchain-based systems like Namecoin are, at this time, unable to match the cryptographic security guarantees (against impersonation or deanonymization attacks) that systems like Onion Service names provide when used directly, but Namecoin's human-meaningful names do make Namecoin more resistant than Onion Service names to some classes of attacks that exploit human psychology rather than breaking cryptography.  For example, humans have trouble remembering a public key hash or recognizing a public key hash as the correct one; this is much better with meaningful names such as Namecoin names (or DNS names).  Attackers can exploit this property of Onion Service names in order to trick users into visiting the incorrect website.  We believe that both systems serve a useful purpose, and determining whether direct usage of Onion Service names or Namecoin naming for Onion Services is more secure for a given user requires consideration of that user's threat model.
+
+### How does Namecoin compare to Let's Encrypt?
+
+Let's Encrypt constitutes a trusted 3rd party, i.e. the Let's Encrypt certificate authority can issue fraudulent certificates to 3rd parties for your domain without your consent.  In contrast, using TLS with Namecoin (assuming that negative certificate overrides are supported by your TLS client) does not involve a trusted 3rd party; only certificates that chain to a `TLSA` record in your name's value will be accepted.
+
+Let's Encrypt also has the ability to censor your ability to receive TLS certificates.  Let's Encrypt routinely uses this capacity to engage in geopolitical censorship.  For example, in response to a [support request pertaining to an error "Policy forbids issuing for name"](https://community.letsencrypt.org/t/error-policy-forbids-issuing-for-name/52233/3), Josh Aas (Executive Director of ISRG, the corporation that operates Let's Encrypt) stated on February 6, 2018:
+
+> The People’s Republic of Donetsk is on the U.S. Treasury Department Specially Designated Nationals list. The website you are inquiring about appears to be a part of, or a state enterprise of, the People’s Republic of Donetsk, thus we cannot provide service according to U.S. law.
+
+Let's Encrypt also routinely censors journalism websites for political purposes.  For example, on January 2, 2019, Let's Encrypt [revoked the TLS certificate for an allegedly-Russian-funded journalism website](https://www.mcclatchydc.com/news/policy/technology/cyber-security/article223832790.html) aimed at American audiences, [on the grounds](https://home.treasury.gov/news/press-releases/sm577) that the website allegedly "engaged in efforts to post content focused on divisive political issues" and "attempted to hold a political rally in the United States".
+
+[ISRG executive director Josh Aas stated](https://community.letsencrypt.org/t/according-to-mcclatchydc-com-lets-encrypt-revoqued-and-banned-usareally-com/81517/10) on January 4, 2019, that "This happens to maybe one domain per month".
+
+In contrast, Namecoin does not have any 3rd party who can censor your ability to receive TLS certificates.
+
+Let's Encrypt's services are entirely gratis.  For Namecoin, the pricing is more complicated.  In Namecoin, you create a private CA and place its public key into the blockchain; you can use that CA to issue as many certificates for your domain as you like without requiring additional blockchain transactions.  Issuing certificates from your private CA (e.g. to rotate your TLS server's keys) is gratis.  However, changing the set of private CA's (e.g. to immediately revoke old certificates before they expire) does require a blockchain transaction, which means you'll have to pay a transaction fee.  The extra storage used by your private CA's public key also implies that renewing your domain name will incur a higher transaction fee than if you weren't using TLS.
+
+TLS certificates issued by Let's Encrypt will work in most TLS clients (without security warnings) without any changes from defaults.  In contrast, Namecoin TLS certificates will only work (without security warnings) if Namecoin is installed.
 
 ### How does Namecoin compare to Blockstack?
 
@@ -149,22 +208,22 @@ Below is a comparison table of Namecoin and Blockstack (with Bitcoin added for r
 
 |  | **Namecoin** | **Blockstack** | **Bitcoin** |
 ---|--------------|----------------|-------------|
-| **Lightweight validation mode** | [SPV](https://bitcoin.org/en/glossary/simplified-payment-verification) backed by [PoW](https://bitcoin.org/en/glossary/proof-of-work) (e.g. BitcoinJ+libdohj). | Checkpoints provided by a trusted 3rd party. Blockstack refers to this as "Consensus Hashes", "SNV" ("Simplified Name Verification"), or (confusingly) "SPV". Is not backed by PoW and has no relation to Bitcoin's SPV threat model. | SPV backed by PoW (e.g. BitcoinJ). | 
-| **Hashrate attesting to transaction ordering** | ~71% of Bitcoin as of 2017 Aug 31. | 100% of Bitcoin. | 100% of Bitcoin. | 
-| **Hashrate attesting to transaction validity** | ~71% of Bitcoin as of 2017 Aug 31. | 0% of Bitcoin (miners do not attest to transaction validity). | 100% of Bitcoin. | 
+| **Lightweight validation mode** | [SPV](https://bitcoin.org/en/glossary/simplified-payment-verification) backed by [PoW](https://bitcoin.org/en/glossary/proof-of-work) (e.g. BitcoinJ+libdohj or Electrum-NMC). | Checkpoints provided by a trusted 3rd party. Blockstack refers to this as "Consensus Hashes", "SNV" ("Simplified Name Verification"), or (confusingly) "SPV". Is not backed by PoW and has no relation to Bitcoin's SPV threat model. | SPV backed by PoW (e.g. BitcoinJ or Electrum). | 
+| **Hashrate attesting to transaction ordering** | ~95% of Bitcoin as of 2020 Jan 12. | 100% of Bitcoin. | 100% of Bitcoin. | 
+| **Hashrate attesting to transaction validity** | ~95% of Bitcoin as of 2020 Jan 12. | 0% of Bitcoin (miners do not attest to transaction validity). | 100% of Bitcoin. | 
 | **Miners possessing a majority of hashrate** | None. | None. | None. | 
 | **Mining pools influencing a majority of hashrate** | None. | None. | None. | 
 | **Legal jurisdictions influencing pools with a majority of hashrate** | China. | China. | China. | 
 | **Infrastructure capable of censoring all new blocks (non-selectively)** | Bitcoin Relay Network, by censoring all Bitcoin blocks that commit to Namecoin blocks. | Bitcoin Relay Network. | Bitcoin Relay Network. | 
 | **Infrastructure capable of censoring new blocks based on content (e.g. targeting a name)** | None. | Bitcoin Relay Network. | Bitcoin Relay Network. | 
-| **Scalability (blockchain download size, fully validating node)** | 5.08 GB as of 2017 Aug 31 ([source](https://bitinfocharts.com/namecoin/)) (includes name values). | 154.47 GB as of 2017 Aug 31 ([source](https://bitinfocharts.com/bitcoin/)), plus name values. | 154.47 GB as of 2017 Aug 31 ([source](https://bitinfocharts.com/bitcoin/)). | 
+| **Scalability (blockchain download size, fully validating node)** | 6.06 GB as of 2020 Jan 12 ([source](https://bitinfocharts.com/namecoin/)) (includes name values). | 300.79 GB as of 2020 Jan 12 ([source](https://bitinfocharts.com/bitcoin/)), plus name values. | 300.79 GB as of 2020 Jan 12 ([source](https://bitinfocharts.com/bitcoin/)). | 
 | **Scalability (maximum name updates per hour)** | ~5494 to ~10989 (~546 on-chain bytes per update, block size limit 500 kB to 1 MB per ~10 minutes) | ~4363 to ~6545 ([~275 on-chain bytes](https://blockchainbdgpzk.onion/tx/c7ec9f0312751d77591fae93f106fa086dab09f89e50159d6e4724d8c7630f16) per update, block size limit 200 kB to 300 kB per ~10 minutes) | N/A | 
 | **Scalability (required incoming bandwidth for read operations, full block node)** | 500 kB to 1 MB per ~10 minutes (if blocks are full) | 1 MB per ~10 minutes for Bitcoin parent chain (blocks usually full), plus all name operation data | 1 MB per ~10 minutes (blocks usually full) | 
 | **Scalability (required incoming bandwidth for read operations, headers-only node)** | ~1 kB to ~10 kB per ~10 minutes, plus a Merkle branch per read operation | Headers-only nodes not possible | 80 B per ~10 minutes | 
 | **Consensus codebase** | Fork of Bitcoin Core with minimal changes (primarily merged mining and 3 new opcodes for altering a name database). | Codebase built by Blockstack developers. | Bitcoin Core. | 
 | **Blockchain type** | Is a sidechain (merge-mined with Bitcoin). | Developers have [stated](https://web.archive.org/web/20160310134327/https://blockstack.org/blockstack.pdf) that "the community needs to look into side chains" because Blockstack's design won't scale well. | Bitcoin. | 
 | **Parent blockchain agility** | Bitcoin is the de facto parent chain.  If Bitcoin is attacked, dies out, or has other issues, miners can use a different SHA256D parent chain without requiring any changes in Namecoin's consensus rules (this worked in practice when "Bitcoin Cash" forked from Bitcoin).  Non-SHA256D parent chains could be adopted via a hardfork. | Bitcoin is the enforced parent chain.  Using any non-Bitcoin parent chain requires a hardfork. | No parent chain. | 
-| **Data storage** | Choice between blockchain (similar threat model to Bitcoin; resistance to censorship is enforced as a consensus rule) and external storage (lower transaction fees, higher scalability).  External DNS storage currently supports nameservers (threat model is DNSSEC with user-supplied keys; the DNSSEC keys have similar threat model to Bitcoin).  External identity storage currently supports PGP keyservers. | Required external storage; consensus rules do not enforce resistance to censorship. | Blockchain; resistance to censorship is enforced as a consensus rule. | 
+| **Data storage** | Choice between blockchain (similar threat model to Bitcoin; resistance to censorship is enforced as a consensus rule) and external storage (lower transaction fees, higher scalability).  External DNS storage currently supports nameservers (threat model is DNSSEC with user-supplied keys; the DNSSEC keys have similar threat model to Bitcoin).  External identity storage currently supports OpenPGP keyservers. | Required external storage; consensus rules do not enforce resistance to censorship. | Blockchain; resistance to censorship is enforced as a consensus rule. | 
 | **Namespace creation pricing** | Creating namespaces is open to all users, free of charge. | Creating a desirable namespace [costs a large amount of money](https://github.com/blockstack/blockstack-core/blob/40f3bd7ed38a7d0536b9156275e4433aec14576b/blockstack/lib/config.py#L428) (0.4 BTC minimum; 40 BTC for a 2-character namespace). | N/A. | 
 | **Name pricing and name length** | All names have equal registration price. | Name registration price deterministically depends on length, character usage, and namespace. | N/A. | 
 | **Name pricing and exchange rates** | Price optimality is dependent on NMC/fiat exchange rates. | Price optimality is dependent on BTC/fiat exchange rates. | N/A. | 
@@ -253,14 +312,14 @@ The good news is that the script system inherent in Bitcoin and Namecoin is desi
 * **Multisig** (similar to Bitcoin) would allow names to be controlled by M-of-N keys.  Some of these keys could belong to the various directors of a company, be stored in a secure location, or be stored by semi-trusted service providers.  This is currently supported by the Namecoin protocol and consensus rules, but not well-exposed to end users.
 * **Offline signing** (similar to Bitcoin) would allow names to be controlled by keys that are located on an air-gapped computer, an isolated offline Qubes virtual machine, or a hardware wallet.  This is currently supported by the Namecoin protocol and consensus rules, but not well-exposed to end users.
 * **Delegated renewal** (Namecoin-specific) would allow a key to be authorized to renew a name, but not change its value or its owner.  Efforts are underway to add this to the Namecoin protocol and consensus rules.
-* **Delegated alteration** (Namecoin-specific) would allow a key to be authorized to alter the value of a name, but not change its owner.  This is supported, but not well exposed to end users. Further improvements are underway.
-* **Delegated partial alteration** (Namecoin-specific) would allow a key to be authorized to alter a specific subset of the value of a name (for example, be allowed to change a domain name's IP address but not its TLS certificate), but not change other parts of the value or its owner.  This is supported, but not well-exposed to end users.  Further improvements are underway.
+* **Delegated alteration** (Namecoin-specific) would allow a key to be authorized to alter the value of a name, but not change its owner.  This is supported, but not well exposed to end users. Further improvements are underway.  See the docs on [delegated alteration]({{site.baseurl}}docs/name-owners/delegated-alteration).
+* **Delegated partial alteration** (Namecoin-specific) would allow a key to be authorized to alter a specific subset of the value of a name (for example, be allowed to change a domain name's IP address but not its TLS certificate), but not change other parts of the value or its owner.  This is supported, but not well-exposed to end users.  Further improvements are underway.  See the docs on [delegated alteration]({{site.baseurl}}docs/name-owners/delegated-alteration).
 
 The above features can, of course, be combined arbitrarily for additional layered security.
 
 Unfortunately, if all of the above security measures fail (or are not in use for a given name), and a name does get stolen, it is very difficult to recover it.  Legal action might be able to fine or imprison the thief if they refuse to return the name, but this is not reliable, given that there is no guarantee that the thief will be identifiable, or that the thief will be in a legal jurisdiction who cares.  Furthermore, since names do get sold or transferred on a regular basis, it would be difficult to prove that the name was not voluntarily transferred.  (False claims of theft are problematic in Bitcoin too.)  In cases where it is obvious that a theft has occurred (e.g. a previously reputable website starts serving malware), voluntary and user-bypassable third-party blacklists (e.g. [PhishTank](https://en.wikipedia.org/wiki/PhishTank)) could be reasonably effective at protecting users in some circumstances.  While this doesn't recover the name, it does reduce the incentive to attempt to steal names.
 
-We are unaware of convincing empirical evidence of how Namecoin's theft risk compares to that of the ICANN domain name system when the recommended security procedures of both are in use; this is difficult to measure because it is likely that a significant number of Namecoin users and ICANN domain name system users are not using the recommended security procedures.
+We are unaware of convincing empirical evidence of how Namecoin's theft risk compares to that of the DNS when the recommended security procedures of both are in use; this is difficult to measure because it is likely that a significant number of Namecoin users and DNS users are not using the recommended security procedures.
 
 ### What is the threat posed by 51% attacks?
 
@@ -284,13 +343,13 @@ There are several types of squatting concerns sometimes raised in relation to Na
 
 The first concern is that too many potentially high-value domains, e.g. `d/google`, have been squatted for the purpose of resale.  This is not a problem that can be solved in a decentralized system, because "squatting on `d/google`" is defined as "owning `d/google` while not being the real-world company named Google", and determining that a given name is or is not owned by a given real-world entity requires some trusted party.  Raising the price of names wouldn't have any effect on this, because no matter what the cost of registering a name is, the resale value of `d/google` is likely to be higher.
 
-The second concern is that too many potentially high-value domains have been squatted for the purpose of impersonation.  This is not a problem specific to Namecoin; phishing sites exist in the ICANN world too, and are frequently countered by using systems such as web-of-trust and voluntary user-bypassable third-party blacklists (e.g [PhishTank](https://en.wikipedia.org/wiki/PhishTank)).  There is no reason to think that similar counters would not work in Namecoin.
+The second concern is that too many potentially high-value domains have been squatted for the purpose of impersonation.  This is not a problem specific to Namecoin; phishing sites exist in the DNS world too, and are frequently countered by using systems such as web-of-trust and voluntary user-bypassable third-party blacklists (e.g [PhishTank](https://en.wikipedia.org/wiki/PhishTank)).  There is no reason to think that similar counters would not work in Namecoin.
 
-The third concern is that single entities can squat on a large number of names, which introduces centralization into the space of squatted names.  For comparison, ICANN domain names are squatted a lot, but the space of squatted names is very decentralized, which reduces abusive behavior such as would happen if most squatted names belonged to one of a few people.  This concern could be resolved by raising the price of name registrations, so that a squatter with a given investment budget cannot register as many names without selling or otherwise using them to recoup costs.  While raising prices sounds like a great plan, the devil is in the details: increasing prices constitutes a softfork, and decreasing prices constitutes a hardfork.  Since cryptocurrencies like Namecoin have an exchange rate that varies over time, the optimal name price might need regular adjustment.  There is ongoing research into how regular name price adjustment could be done safely and non-disruptively, and research in the wider cryptocurrency world on block size adjustment (which is a similar problem in many ways) may be applicable.
+The third concern is that single entities can squat on a large number of names, which introduces centralization into the space of squatted names.  For comparison, DNS domain names are squatted a lot, but the space of squatted names is very decentralized, which reduces abusive behavior such as would happen if most squatted names belonged to one of a few people.  This concern could be resolved by raising the price of name registrations, so that a squatter with a given investment budget cannot register as many names without selling or otherwise using them to recoup costs.  While raising prices sounds like a great plan, the devil is in the details: increasing prices constitutes a softfork, and decreasing prices constitutes a hardfork.  Since cryptocurrencies like Namecoin have an exchange rate that varies over time, the optimal name price might need regular adjustment.  There is ongoing research into how regular name price adjustment could be done safely and non-disruptively, and research in the wider cryptocurrency world on block size adjustment (which is a similar problem in many ways) may be applicable.
 
 At the moment, the current developers consider other issues to be somewhat higher priority.  For example, getting a domain name without dealing with squatters doesn't mean much if it's difficult for people to view your website.  Once development of other areas has progressed further, we do intend to spend a larger fraction of our time on improving name pricing.  However, if new developers want to get involved with proposing, prototyping, or analyzing name price systems, we would be delighted to have the assistance.
 
-In the meantime, practical advice is that if you want a name but it's squatted, try to contact the owner (many squatters leave contact information in the value of their names) and see if they'll let you have it.  We have heard of many cases where squatters either gave away names or sold them for very little money if the recipient actually planned to use the name rather than resell it.  If they demand money that you're unwilling to pay, consider registering a different name.  It's unlikely that the website or service you want to set up can only work with that one specific name.  Strategies for finding an unused ICANN domain name or an untrademarked business name are likely to be applicable for Namecoin too.
+In the meantime, practical advice is that if you want a name but it's squatted, try to contact the owner (many squatters leave contact information in the value of their names) and see if they'll let you have it.  We have heard of many cases where squatters either gave away names or sold them for very little money if the recipient actually planned to use the name rather than resell it.  If they demand money that you're unwilling to pay, consider registering a different name.  It's unlikely that the website or service you want to set up can only work with that one specific name.  Strategies for finding an unused DNS domain name or an untrademarked business name are likely to be applicable for Namecoin too.
 
 ### Is Namecoin anonymous?
 
@@ -301,3 +360,9 @@ When used properly in conjunction with Tor, Namecoin *may* offer sufficient pseu
 We recognize that better anonymity is an important use case.  We occasionally receive questions from users about whether Namecoin can be used anonymously.  While we don't know much about these users (for obvious reasons), some of them appear to be in circumstances where failure of anonymity could lead to significant negative consequences.  We aim to support these use cases in the future, but right now it would be irresponsible and reckless to do so.
 
 We are currently engaging with projects that provide blockchain anonymity (e.g. Monero and Zcash), with the goal of achieving similar anonymity for Namecoin.  Both Monero and Zcash have mathematical security proofs of their anonymity, subject to given assumptions and a given anonymity set.  Blockchain anonymity is also an active research area, so further innovations may very well occur in the future.
+
+### I heard that an academic study found that Namecoin is only used by 28 websites; is that really true?
+
+This claim is derived from a study out of Princeton University, and is a result of faulty study design.  The study's design considers all `.bit` websites that contain identical content to a DNS website to be "trivial" and discounts such websites, leaving only 28 `.bit` websites that contain content that cannot be found on a DNS website.  This number seems plausible to us, though we haven't tried to reproduce the result independently.  However, the Namecoin developers have never recommended that typical `.bit` domain owners restrict their website to only `.bit`; we usually recommend that `.bit` be used **in addition to** DNS.  Reading Sec. 4.3 of the study reveals that the study authors found an additional 111 `.bit` domains that pointed to a website that was also available via DNS.  This results in a total count of 139 `.bit` domains with non-trivial content, if the definition of "trivial" doesn't include websites that are available on both Namecoin and DNS.  This count of 139 also seems plausible to us, though (again) we haven't tried to reproduce the result independently.
+
+It is unfortunate that the Princeton study authors primarily marketed the count of 28 despite the count of 139 being a far more relevant measure.  It is also unfortunate that the study authors did not contact us to ask for peer review, as we would have easily caught that issue had we been consulted.  (Interestingly, the study authors *did* contact the CTO of a Namecoin competitor to ask for feedback on their paper prior to publishing.)

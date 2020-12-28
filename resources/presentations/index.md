@@ -5,6 +5,30 @@ title: Presentations
 
 {::options parse_block_html="true" /}
 
+## 36C3
+
+[Videos and slides are here.]({{site.baseurl}}2020/01/11/36c3-summary.html)
+
+## CloudFest 2019
+
+[Video is here.]({{site.baseurl}}2020/01/13/cloudfest-2019-video.html)
+
+## 35C3
+
+[Slides are here.]({{site.baseurl}}2019/05/08/35c3-summary.html)
+
+## Internet Governance Forum 2018
+
+[Videos, slides, transcript, and report are here.]({{site.baseurl}}2019/01/30/internet-governance-forum-2018-summary.html)
+
+## Malta Blockchain Summit 2018
+
+[Video is here.]({{site.baseurl}}2019/04/24/malta-blockchain-summit-2018-video.html)
+
+## Decentralized Web Summit 2018
+
+[Video is here.]({{site.baseurl}}2018/11/02/decentralized-web-summit-2018-summary.html)
+
 ## 34C3
 
 [Videos and slides are here.]({{site.baseurl}}2018/03/19/34c3-slides-videos.html)
@@ -26,3 +50,11 @@ title: Presentations
 ## Decentralized Web Summit 2016
 
 [Videos and slides are here.]({{site.baseurl}}2016/07/03/decentralized-web-summit.html)
+
+## Grazer Linuxtage 2015
+
+[Video is here.]({{site.baseurl}}2019/04/20/daniel-kraft-at-grazer-linuxtage-2015-video.html)
+
+## Non-Namecoin Presentations
+
+[ICANN60]({{site.baseurl}}2020/04/30/icann-60-teg-recordings.html)
