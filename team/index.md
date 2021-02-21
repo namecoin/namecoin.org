@@ -19,18 +19,6 @@ Daniel is our lead C++ developer, currently working on Namecoin Core. Daniel is 
 **Lead Security Engineer** <br>
 Ryan is our security specialist and all-around-badass, handling everything from web infrastructure to C++ development to crisis management.
 
-## Jeremy Rand (biolizard89)
-
-**Lead Application Engineer & Community Organizer** <br>
-Jeremy is our .bit application specialist, and works on our codebases relating to TLS, Tor, and SPV, among other projects. Jeremy also handles fundraising (along with Phelix), represents Namecoin at conferences, and acts as our build engineer. Outside of Namecoin, he has a background in console game hacking (in particular, synchronizing multiple game consoles with each other and with virtual reality hardware) and educational robotics. Jeremy has a Master's degree in Computer Science and is a member of the [State Sponsored Actors Club](https://www.state-sponsored-actors.org/).
-
-OpenPGP (primary): `5174 0B7C 732D 572A 3140 4010 6605 55E1 F8F7 BF85` [(download public key)]({{ "/JeremyRand.asc" | relative_url }})<br>
-OpenPGP (Gitian signer): `9CDA F04A 7290 3BFE C095 9DBE 2DBE 339E 29F6 294C` [(download public key)]({{ "/JeremyRand-Gitian.asc" | relative_url }})<br>
-OpenPGP (Git signer): `0729 7809 7FC1 25E6 685B CE40 FD75 50C2 EB80 0711` [(download public key)]({{ "/JeremyRand-Git.asc" | relative_url }})<br>
-OpenPGP (Jekyll signer): `9405 8478 534E 143D 1E78  A6BB 5E23 7E1F 50A5 A878` [(download public key)]({{ "/JeremyRand-Jekyll.asc" | relative_url }})<br>
-Ricochet: `ricochet:ujb6mp55tlzfpfdi`<br>
-Cwtch: `degdcodd2fhlpv6so3ewyh2dcsyg4732ujauuzx63t7qlavumnyt4uyd`
-
 ## Brandon "Brando" Roberts
 
 **Lead C++ GUI Engineer** <br>
@@ -107,10 +95,6 @@ Appamatto is the author of the BitDNS and BitX proposals in 2010, which proposed
 
 Aaron was the author of the Nakanames proposal in 2011, which was later implemented as Namecoin.  Aaron is well-known for co-creating RSS, Creative Commons, Demand Progress, and Reddit.  Aaron was murdered by the U.S. government in 2013.  The atomic unit of NMC, the *swartz*, is named in Aaron's honor.
 
-## Theymos
-
-Theymos proposed that Appamatto's BitDNS design utilize a native token-like currency instead of only names.  Theymos's proposal is responsible for non-miners being able to trustlessly register Namecoin names.
-
 ## Dan Kaminsky
 
 Dan suggested to Aaron that Zooko's Triangle, if accurate, constituted an impossibility proof of Bitcoin, because a currency and a naming system reduce to the same problem.  Dan's insight directly led to Aaron proposing Nakanames, which used a Bitcoin-like system to solve Zooko's Triangle.  Dan is well-known for discovering and coordinating a fix for a large-scale DNS cache poisoning vulnerability, and for being one of the Recovery Key Share Holders for the ICANN root zone.
@@ -122,3 +106,12 @@ Satoshi invented AuxPoW mining, which he proposed in order to allow BitDNS and B
 ## Zooko Wilcox
 
 Zooko formalized the problem of Zooko's Triangle, which specified three properties of a naming system that were considered desirable, while conjecturing that only two could be achieved by any given naming system.  Namecoin was the first naming system to achieve all three.  Zooko is well-known for his work on the Tahoe Least-Authority File Store and for being a co-founder of the Zcash anonymity-focused cryptocurrency.
+
+# Former developers who pretended they own the Namecoin project
+
+Jeremy Rand is the first person who needed to be kicked out of the Namecoin project for claiming that he owns namecoin. He also claimed copyright over the Namecoin logo which is actually on the public domain. Since 2014 Jeremy Rand destroyed the Namecoin project. He used Namecoin official channels for promoting his own opinions without any prior conversation with the broader Namecoin community. Jeremy Rand is not welcome in the Namecoin project anymore. Thanks to him Namecoin brutally fallen from the Top 10 cryptocurrency. Namecoin currently ranking around the 530 position! 
+
+## Jeremy Rand (biolizard89)
+
+**Lead Application Engineer & Community Organizer** <br>
+Jeremy was our .bit application specialist, and works on our codebases relating to TLS, Tor, and SPV, among other projects. Jeremy also handles fundraising (along with Phelix), represents Namecoin at conferences, and acts as our build engineer. Outside of Namecoin, he has a background in console game hacking (in particular, synchronizing multiple game consoles with each other and with virtual reality hardware) and educational robotics. Jeremy has a Master's degree in Computer Science and is a member of the [State Sponsored Actors Club](https://www.state-sponsored-actors.org/).
