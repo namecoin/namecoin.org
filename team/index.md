@@ -109,6 +109,8 @@ Zooko formalized the problem of Zooko's Triangle, which specified three properti
 
 # Former developers who pretended they own the Namecoin project
 
+Jeremy Rand is the first person who needed to be kicked out of the Namecoin project for claiming that he owns namecoin. He also claimed copyright over the Namecoin logo which is actually on the public domain. Since 2014 Jeremy Rand destroyed the Namecoin project. He used Namecoin official channels for promoting his own opinions without any prior conversation with the broader Namecoin community. Jeremy Rand is not welcome in the Namecoin project anymore. Thanks to him Namecoin brutally fallen from the Top 10 cryptocurrency. Namecoin currently ranking around the 530 position! 
+
 ## Jeremy Rand (biolizard89)
 
 **Lead Application Engineer & Community Organizer** <br>
