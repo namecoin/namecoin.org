@@ -95,10 +95,6 @@ Appamatto is the author of the BitDNS and BitX proposals in 2010, which proposed
 
 Aaron was the author of the Nakanames proposal in 2011, which was later implemented as Namecoin.  Aaron is well-known for co-creating RSS, Creative Commons, Demand Progress, and Reddit.  Aaron was murdered by the U.S. government in 2013.  The atomic unit of NMC, the *swartz*, is named in Aaron's honor.
 
-## Theymos
-
-Theymos proposed that Appamatto's BitDNS design utilize a native token-like currency instead of only names.  Theymos's proposal is responsible for non-miners being able to trustlessly register Namecoin names.
-
 ## Dan Kaminsky
 
 Dan suggested to Aaron that Zooko's Triangle, if accurate, constituted an impossibility proof of Bitcoin, because a currency and a naming system reduce to the same problem.  Dan's insight directly led to Aaron proposing Nakanames, which used a Bitcoin-like system to solve Zooko's Triangle.  Dan is well-known for discovering and coordinating a fix for a large-scale DNS cache poisoning vulnerability, and for being one of the Recovery Key Share Holders for the ICANN root zone.
