@@ -19,7 +19,8 @@ Two chat channels exist for Namecoin.
 
 * [OFTC IRC](ircs://irc.oftc.net:6697/#namecoin) (Tor-friendly)
 * Matrix (Tor-friendly): #namecoin:matrix.org
-* [Element web chat](https://app.element.io/#/room/#namecoin:matrix.org) (Tor-friendly)
+* [Element web chat](https://riot.kiwifarms.net/#/room/#namecoin:matrix.org) (Tor-friendly)
+* [Alternate Element web chat](https://app.element.io/#/room/#namecoin:matrix.org) (Tor-friendly, might need additional verification)
 * [OFTC web chat](https://webchat.oftc.net/?channels=%23namecoin)
 * [Freenode IRC](ircs://ajnvpgl6prmkb7yktvue6im5wiedlz2w32uhcwaamdiecdrfpwwgnlqd.onion:6697/#namecoin)
 * [Freenode IRC (clearnet)](ircs://chat.freenode.net:6697/#namecoin)
@@ -33,7 +34,8 @@ Two chat channels exist for Namecoin.
 
 * [OFTC IRC](ircs://irc.oftc.net:6697/#namecoin-dev) (Tor-friendly)
 * Matrix (Tor-friendly): #namecoin-dev:matrix.org
-* [Element web chat](https://app.element.io/#/room/#namecoin-dev:matrix.org) (Tor-friendly)
+* [Element web chat](https://riot.kiwifarms.net/#/room/#namecoin-dev:matrix.org) (Tor-friendly)
+* [Alternate Element web chat](https://app.element.io/#/room/#namecoin-dev:matrix.org) (Tor-friendly, might need additional verification)
 * [OFTC web chat](https://webchat.oftc.net/?channels=%23namecoin-dev)
 * [Freenode IRC](ircs://ajnvpgl6prmkb7yktvue6im5wiedlz2w32uhcwaamdiecdrfpwwgnlqd.onion:6697/#namecoin-dev)
 * [Freenode IRC (clearnet)](ircs://chat.freenode.net:6697/#namecoin-dev)
