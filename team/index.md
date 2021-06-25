@@ -28,6 +28,7 @@ OpenPGP (primary): `5174 0B7C 732D 572A 3140 4010 6605 55E1 F8F7 BF85` [(downloa
 OpenPGP (Gitian signer): `9CDA F04A 7290 3BFE C095 9DBE 2DBE 339E 29F6 294C` [(download public key)]({{ "/JeremyRand-Gitian.asc" | relative_url }})<br>
 OpenPGP (Git signer): `0729 7809 7FC1 25E6 685B CE40 FD75 50C2 EB80 0711` [(download public key)]({{ "/JeremyRand-Git.asc" | relative_url }})<br>
 OpenPGP (Jekyll signer): `9405 8478 534E 143D 1E78  A6BB 5E23 7E1F 50A5 A878` [(download public key)]({{ "/JeremyRand-Jekyll.asc" | relative_url }})<br>
+OpenPGP (RBM Cirrus Signer): `EE6E 7B22 9E03 6935 BDF5 3871 A18D F535 3723 8E3A` [(download public key)]({{ "/JeremyRand-RBM-Cirrus.asc" | relative_url }})<br>
 Ricochet: `ricochet:ujb6mp55tlzfpfdi`<br>
 Cwtch: `degdcodd2fhlpv6so3ewyh2dcsyg4732ujauuzx63t7qlavumnyt4uyd`
 
