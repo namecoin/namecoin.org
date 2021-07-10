@@ -40,17 +40,19 @@ Decentralized exchanges offer better security and privacy than centralized excha
 
 ## Run a DNS seed
 
-DNS seeds help Namecoin users find peers.  You can run a DNS seed via [dnsseeder](https://github.com/gombadi/dnsseeder); ask us for details on Matrix or IRC.
+DNS seeds help Namecoin users find peers.  You can run a DNS seed via [dnsseeder](https://github.com/gombadi/dnsseeder) (use the `namecoin.json` config file).  If you've set up a DNS seed, let us know so we can add it to the client.
 
 ## Run an ElectrumX server
 
-ElectrumX servers help Electrum-NMC users synchronize the blockchain more quickly and securely.  You can run one by installing [ElectrumX](https://github.com/kyuupichan/electrumx).  Please consider running ElectrumX on as many of the following networks as you can:
+ElectrumX servers help Electrum-NMC users synchronize the blockchain more quickly and securely.  You can run one by installing [ElectrumX](https://github.com/spesmilo/electrumx) (set `COIN=Namecoin`).  Please consider running ElectrumX on as many of the following networks as you can, for both mainnet and testnet:
 
 * Raw IPv4 address
 * Raw IPv6 address
 * Domain name pointing to IPv4 address
 * Domain name pointing to IPv6 address
 * Tor onion service
+
+If you've set up an ElectrumX server, let us know so we can add it to the client.
 
 ## Merge-mine Namecoin
 
