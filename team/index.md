@@ -79,6 +79,21 @@ Aerth did the initial work in creating pkcs11mod (a Go library for creating PKCS
 **ZeroNet Specialist** <br>
 Lola works on enhancing Namecoin integration in ZeroNet, a decentralized website hosting system loosely based on BitTorrent.
 
+## Somewhat
+
+**Quality Assurance Specialist** <br>
+Somewhat beta-tests our releases, helping catch bugs that our developers and CI tests failed to notice.
+
+## virus_net
+
+**Metrics Specialist & Russian Translator** <br>
+virus_net helps us monitor real-world usage of Namecoin, and also maintains a Russian translation of Namecoin's documentation.
+
+## grringo
+
+**JavaScript Specialist & macOS Specialist** <br>
+grringo contributes to Namecoin JavaScript software such as browser extensions, and also assists with macOS development, packaging, and testing.
+
 ## Anonymous Developers
 
 We have several developers who prefer to remain anonymous; their anonymity does not reflect the incredible impact their contributions have made to Namecoin. We are deeply grateful for their work.
@@ -94,6 +109,42 @@ Mikhail (then acting under a pseudonym) was our lead C++ developer for roughly a
 ## Phelix
 
 Phelix (a pseudonym) was community organizer and lead Windows developer. He worked on namecoind, Namecoin-Qt, NMControl, and other projects such as ANTPY. He is mostly retired but occasionally comments from the sidelines.
+
+## Gokhan San
+
+Gokhan created the Namecoin Domain Names v2 specification, which introduced functionality such as Tor onion service support.
+
+## fsb4000
+
+fsb4000 rebranded Namecoin Core's Qt GUI, removing all image and text references to Bitcoin.
+
+## Kevin Risinger (artisbigshirts)
+
+Kevin designed Namecoin's logo.
+
+## Ben Lloyd (Shobute)
+
+Ben designed Namecoin's website.
+
+## Luke Dashjr
+
+Luke forward-ported Namecoin Core's Qt GUI from Qt4 to Qt5.
+
+## Chris Double
+
+Chris wrote one of the earliest comprehensive tutorials on using Namecoin.  WikiLeaks tweeted a link to Chris's tutorial when they endorsed Namecoin.
+
+## Kefkius
+
+Kefkius developed an early incarnation of Electrum-NMC; this work was later revamped by Ahmed to form the Electrum-NMC that exists today.
+
+## HashEngineering
+
+HashEngineering developed an early port of BitcoinJ to Namecoin; this work was later revamped by Jeremy to form the Namecoin support in libdohj.
+
+## ItsNotLupus
+
+ItsNotLupus developed NmcSocks, which was the first implementation of Namecoin's Tor onion service support, I2P eepsite support, and partial TLS support.
 
 ## Khalahan Henkh (khal)
 
