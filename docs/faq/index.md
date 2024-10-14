@@ -778,15 +778,11 @@ In the meantime, practical advice is that if you want a name but it's squatted, 
 
 ### Is Namecoin anonymous?
 
-Like Bitcoin, Namecoin is not automatically anonymous.  A thorough description of Bitcoin's poor anonymity properties is outside the scope of this FAQ.
+Like Bitcoin, issuing Namecoin transactions is not automatically anonymous.  A thorough description of Bitcoin's poor anonymity properties is outside the scope of this FAQ.
 
-Electrum-NMC v4.0.6+ has experimental support for anonymity.  To get high-quality anonymity, you need to hide information from several attackers:
+Both Namecoin Core and Electrum-NMC support resolving Namecoin names anonymously if Tor is enabled; use Tor Browser for best results.
 
-* Blockchain graph analysis.  You should enable the anonymity mode in Electrum-NMC's settings, which will attempt to protect you from graph analysis that links your names together.
-* ElectrumX server operators.  You should run your own ElectrumX server, and only allow it (and its Namecoin Core node) to connect via Tor.
-* Exchanges.  You should only purchase NMC from exchanges that allow access over Tor, do not collect personally identifiable information, and allow trading an anonymous cryptocurrency (e.g. Monero or Zcash) for NMC.
-
-Namecoin Core does not yet support anonymity; nor do Electrum-NMC versions prior to v4.0.6.
+To register names anonymously, see our [anonymous registration]({{ "/docs/name-owners/anonymity/" | relative_url }}) documentation.
 
 Namecoin anonymity is experimental and unaudited.  Don't rely on it more than is warranted for your safety.
 

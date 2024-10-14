@@ -54,17 +54,6 @@ Like Bitcoin, Namecoin's security relies on users not losing their private keys,
 
 All names and their values are unencrypted in the Namecoin blockchain, which could impact privacy of name owners. Don't place data in the blockchain that you don't want the world to see, and remember that once it's in the blockchain, it can't be removed. There are proposals to encrypt blockchain data and remove expired name data, but they are not implemented yet.
 
-### Namecoin Is Not Anonymous
+### Anonymity
 
-Like Bitcoin, Namecoin's blockchain provides easily linkable pseudonymity, NOT anonymity. This means that name owners are easily linkable to their other Namecoin transactions. If one of your transactions is with an exchange who knows your real name or IP address, you should assume that the exchange knows the real name or IP address associated with all of your names. There are proposals for improving this, e.g. CoinJoin and Zerocoin, but they are not implemented yet. If any of your transactions were not made via Tor, you can further assume that an attacker knows the IP address associated with all of your Namecoin transactions.
-
-While looking up data from the Namecoin blockchain is relatively private since you do not generate any network traffic indicating which names you are looking up, viewing Dot-Bit websites is not anonymous for the following reasons:
-
-* Dot-Bit websites are not compatible with TorBrowser. Browsers other than TorBrowser will leak a lot of fingerprintable data, which will probably identify you specifically, even if your IP is masked by Tor.
-
-* NMControl will generate traffic that isn't routed through Tor. There is a configuration option for NMControl which will disable retrieving data which is external to the blockchain, but this will break a lot of Dot-Bit websites.
-
-* Even if TorBrowser support were added, it would be trivially easy for a website you visit to fingerprint you as one of the very few users capable of resolving Dot-Bit URL's. The ONLY way that this could be resolved would be for The Tor Project to include Namecoin in the Tor Browser Bundle by default, which is almost certainly not going to happen in the foreseeable future.
-
-As a side note, be aware that downloading the Namecoin blockchain via Tor might put too much strain on the Tor network. SPV+UTXO will improve this situation when it is implemented.
-
+See [the FAQ]({{ "/docs/faq/#is-namecoin-anonymous" | relative_url }}).
