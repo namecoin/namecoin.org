@@ -15,3 +15,4 @@ In order to use the below documentation, you'll first need to buy a Namecoin nam
 * [DNSSEC](dnssec/)
 * [Dynamic IP's](dynamic-ips/)
 * [Atomic Name Trading](atomic-name-trading/)
+* [Anonymity](anonymity/)
