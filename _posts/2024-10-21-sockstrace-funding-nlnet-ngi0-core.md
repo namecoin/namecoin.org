@@ -10,6 +10,7 @@ We're happy to announce that Namecoin is [receiving](https://nlnet.nl/news/2024/
 This new funding is focused on SocksTrace. You might know SocksTrace by its former (and truly magical) name, Heteronculous-Horklump. While the former name was hilarious for Harry Potter geeks, we got feedback at 37C3 that it was too... let's say, "unmemorable" for the rest of the world (especially for non-native English speakers); thus, we’ve seized the chance to simplify things with a name that’s easier on the brain. Don't worry, though—the new name is still meme-worthy!
 
 SocksTrace is a proxy leak detection tool designed for both CI testing and manual QA testing. It leverages the Linux `ptrace` feature to monitor socket syscalls that could potentially bypass a proxy.
+
 Specifically, the following areas of development will be funded:
 
 * Improved speed by whitelisting specific syscalls.
