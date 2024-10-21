@@ -13,11 +13,11 @@ SocksTrace is a proxy leak detection tool designed for both CI testing and manua
 
 Specifically, the following areas of development will be funded:
 
-* Improved speed by whitelisting specific syscalls.
-* Handling incoming TCP (Transmission Control Protocol) connections.
-* Improved test coverage.
+* Improved speed by whitelisting specific syscalls
+* Handling incoming TCP (Transmission Control Protocol) connections
+* Improved test coverage
 * Enforce stream isolation
-* Provide support for POWER systems.
+* Provide support for POWER systems
 * SOCKSify DNS traffic
 
 This work will principally be done by developers Jeremy Rand and Robert Nganga (who is the author of this post).
