@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Namecoin Receives Funding from NLnet Foundation’s NGI0 Core Fund"
+title: "Namecoin's SocksTrace Receives Funding from NLnet Foundation’s NGI0 Core Fund"
 author: "Robert Nganga"
 tags: [News]
 ---
