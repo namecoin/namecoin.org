@@ -27,7 +27,7 @@
 
         <div class="container-fluid" id="funders">
             <p>Thanks to our funders:</p>
-            {% assign shuffled_sponsors = site.data.sponsors | sample: 14 %}
+            {% assign shuffled_sponsors = site.data.sponsors | sample: 16 %}
             <ul class="list-inline">
                 {% for i in shuffled_sponsors %}
                     <li class="funder">{{ i }}</li>
