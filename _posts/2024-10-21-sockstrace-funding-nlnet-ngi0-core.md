@@ -5,7 +5,7 @@ author: "Robert Nganga"
 tags: [News]
 ---
 
-We're happy to announce that Namecoin is [receiving](https://nlnet.nl/news/2024/20241003-announcing-Core-call.html) additional funding from NLnet Foundation's NGI0 Core (Next Generation Internet: Zero Core) Fund. If you're unfamiliar with NLnet, you might want to read [about NLnet Foundation](https://nlnet.nl/foundation/), or just take a look at [the projects they've funded over the years](https://nlnet.nl/thema/index.html) (you might see some familiar names). 
+We're happy to announce that Namecoin is [receiving](https://nlnet.nl/news/2024/20241003-announcing-Core-call.html) additional funding from NLnet Foundation's NGI0 Core (Next Generation Internet: Zero Core) Fund. If you're unfamiliar with NLnet, you might want to read [about NLnet Foundation](https://nlnet.nl/foundation/), or just take a look at [the projects they've funded over the years](https://nlnet.nl/thema/index.html) (you might see some familiar names).
 
 This new funding is focused on SocksTrace. You might know SocksTrace by its former (and truly magical) name, Heteronculous-Horklump. While the former name was hilarious for Harry Potter geeks, we got feedback at 37C3 that it was too... let's say, "unmemorable" for the rest of the world (especially for non-native English speakers); thus, we’ve seized the chance to simplify things with a name that’s easier on the brain. Don't worry, though—the new name is still meme-worthy!
 
