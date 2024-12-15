@@ -17,15 +17,59 @@ Nightly builds are produced by infrastructure that is not under our direct contr
 
 ## Namecoin Core
 
+### Stable Branch Beta 28.0
+
+<div class="col-sm-4">
+
+#### Windows
+
+* [64-bit installer]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-win64-setup-unsigned.exe)
+* [64-bit zip]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-win64.zip)
+
+</div>
+
+<div class="col-sm-4">
+
+#### GNU/Linux
+
+* [POWER 64-bit BE]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-powerpc64-linux-gnu.tar.gz)
+* [POWER 64-bit LE Temporarily Disabled]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-powerpc64le-linux-gnu.tar.gz)
+* [ARM 64-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-aarch64-linux-gnu.tar.gz)
+* [ARM 32-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-arm-linux-gnueabihf.tar.gz)
+* [RISC-V 64-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-riscv64-linux-gnu.tar.gz)
+* [x86 64-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-x86_64-linux-gnu.tar.gz)
+
+</div>
+
+<div class="col-sm-4">
+
+#### macOS
+
+* [ARM 64-bit app]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-arm64-apple-darwin-unsigned.zip)
+* [ARM 64-bit tar.gz]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-arm64-apple-darwin.tar.gz)
+* [x86 64-bit app]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-x86_64-apple-darwin-unsigned.zip)
+* [x86 64-bit tar.gz]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-x86_64-apple-darwin.tar.gz)
+
+</div>
+
+</div>
+
+* [Guix signatures](https://github.com/namecoin/guix.sigs/tree/master/28.0)
+    * **Make sure you check for matching Guix signatures!**
+* [Source code tarball]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0.tar.gz)
+* [Source code](https://github.com/namecoin/namecoin-core/)
+
+### Name Tab Beta
+
 * [Namecoin Core 0.15.99-name-tab-beta1 (GNU/Linux ARM 64-bit)]({{ site.files_url }}/files/namecoin-core/namecoin-core-0.15.99-name-tab-beta1/namecoin-0.15.99-aarch64-linux-gnu.tar.gz)
 * [Namecoin Core 0.15.99-name-tab-beta1 (GNU/Linux ARM 32-bit)]({{ site.files_url }}/files/namecoin-core/namecoin-core-0.15.99-name-tab-beta1/namecoin-0.15.99-arm-linux-gnueabihf.tar.gz)
 * [Namecoin Core 0.15.99-name-tab-beta1 (GNU/Linux x86 64-bit)]({{ site.files_url }}/files/namecoin-core/namecoin-core-0.15.99-name-tab-beta1/namecoin-0.15.99-x86_64-linux-gnu.tar.gz)
 * [Namecoin Core 0.15.99-name-tab-beta1 (GNU/Linux x86 32-bit)]({{ site.files_url }}/files/namecoin-core/namecoin-core-0.15.99-name-tab-beta1/namecoin-0.15.99-i686-pc-linux-gnu.tar.gz)
 * [Namecoin Core 0.15.99-name-tab-beta1 (Source code tarball)]({{ site.files_url }}/files/namecoin-core/namecoin-core-0.15.99-name-tab-beta1/namecoin-0.15.99.tar.gz)
-* [Namecoin Core Gitian signatures](https://github.com/namecoin/gitian.sigs/)
+* [Namecoin Core 0.15.99 Gitian signatures](https://github.com/namecoin/gitian.sigs/)
 * [Namecoin Core source code](https://github.com/namecoin/namecoin-core/)
 
-### Things to Test
+#### Things to Test
 
 * Full flow for registering names.
 * Full flow for updating and renewing names.
@@ -33,7 +77,7 @@ Nightly builds are produced by infrastructure that is not under our direct contr
 * The above with mainnet, testnet, and regtest networks.
 * The above with encrypted locked, encrypted unlocked, and unencrypted wallets.
 
-### Known Issues
+#### Known Issues
 
 * Windows builds not working (should be fixed in Beta 2)
 * macOS builds not working (should be fixed in Beta 2)
