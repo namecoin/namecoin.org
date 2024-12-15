@@ -93,6 +93,8 @@ Robert works on tools for detecting and preventing proxy leaks in the Namecoin a
 **C++ GUI Developer & Threat Modeling Specialist** <br>
 Rose works on the Namecoin Core GUI and related codebases. She also helps organize hacker conference events, and optimizes Namecoin for users with interesting threat models.
 
+OpenPGP: `FD83 66A8 07A9 9FA2 7FD9  CCEA 9FE3 BFDD A6C5 3495` [(download public key)]({{ "/RoseTuring.asc" | relative_url }})
+
 ## Anonymous Developers
 
 We have several developers who prefer to remain anonymous; their anonymity does not reflect the incredible impact their contributions have made to Namecoin. We are deeply grateful for their work.
