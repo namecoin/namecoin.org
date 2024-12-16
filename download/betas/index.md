@@ -19,16 +19,10 @@ Nightly builds are produced by infrastructure that is not under our direct contr
 
 ### Stable Branch Beta 28.0
 
-<div class="col-sm-4">
-
 #### Windows
 
 * [64-bit installer]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-win64-setup-unsigned.exe)
 * [64-bit zip]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-win64.zip)
-
-</div>
-
-<div class="col-sm-4">
 
 #### GNU/Linux
 
@@ -39,20 +33,12 @@ Nightly builds are produced by infrastructure that is not under our direct contr
 * [RISC-V 64-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-riscv64-linux-gnu.tar.gz)
 * [x86 64-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-x86_64-linux-gnu.tar.gz)
 
-</div>
-
-<div class="col-sm-4">
-
 #### macOS
 
 * [ARM 64-bit app]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-arm64-apple-darwin-unsigned.zip)
 * [ARM 64-bit tar.gz]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-arm64-apple-darwin.tar.gz)
 * [x86 64-bit app]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-x86_64-apple-darwin-unsigned.zip)
 * [x86 64-bit tar.gz]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-x86_64-apple-darwin.tar.gz)
-
-</div>
-
-</div>
 
 * [Guix signatures](https://github.com/namecoin/guix.sigs/tree/master/28.0)
     * **Make sure you check for matching Guix signatures!**
