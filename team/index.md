@@ -95,6 +95,11 @@ Rose works on the Namecoin Core GUI and related codebases. She also helps organi
 
 OpenPGP: `FD83 66A8 07A9 9FA2 7FD9  CCEA 9FE3 BFDD A6C5 3495` [(download public key)]({{ "/RoseTuring.asc" | relative_url }})
 
+## Alice Margatroid
+
+**Machine Learning Specialist** <br>
+Alice works on anonymity research involving machine learning. She has a background in large language models and genetic algorithms.
+
 ## Anonymous Developers
 
 We have several developers who prefer to remain anonymous; their anonymity does not reflect the incredible impact their contributions have made to Namecoin. We are deeply grateful for their work.
