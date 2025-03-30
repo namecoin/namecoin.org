@@ -2,6 +2,7 @@
 layout: post
 title: "Namecoin Receives TLS and Anonymity Research Funding from Power Up Privacy and NLnet Foundation’s NGI0 Core Fund"
 author: "Alice Margatroid and Jeremy Rand"
+date:   2025-03-30 02:00:00 +0000
 tags: [News]
 ---
 
