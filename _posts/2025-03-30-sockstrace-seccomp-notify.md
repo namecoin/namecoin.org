@@ -47,3 +47,5 @@ Currently, SocksTrace offers two options for incoming TCP connections:
 * Block all incoming connections (to prevent accidental exposure).
 
 We are also working on an option to allow only specific addresses, adding more fine-grained control.
+
+This work was funded by NLnet Foundation's Next Generation Internet Zero Core Fund.
