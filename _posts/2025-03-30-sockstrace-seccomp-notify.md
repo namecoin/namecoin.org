@@ -6,8 +6,6 @@ date:   2025-03-30 04:00:00 +0000
 tags: [News]
 ---
 
-## Switching from ptrace to seccomp notify
-
 Initially, SocksTrace relied on `ptrace` to trace connect syscalls. While `ptrace` works well for simple programs, it wasn’t practical for high-performance applications, especially browsers.
 
 ### Why switch to seccomp notify?
