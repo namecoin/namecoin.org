@@ -373,6 +373,8 @@ In contrast, Namecoin TLS certificates do not leak your subdomains.
 
 Let's Encrypt's services are entirely gratis.  For Namecoin, the pricing is more complicated.  In Namecoin, you create a private CA and place its public key into the blockchain; you can use that CA to issue as many certificates for your domain as you like without requiring additional blockchain transactions.  Issuing certificates from your private CA (e.g. to rotate your TLS server's keys) is gratis.  However, changing the set of private CA's (e.g. to immediately revoke old certificates before they expire) does require a blockchain transaction, which means you'll have to pay a transaction fee.  The extra storage used by your private CA's public key also implies that renewing your domain name will incur a higher transaction fee than if you weren't using TLS.
 
+Let's Encrypt typically renews your certificates automatically. Namecoin certificates must be renewed manually.
+
 TLS certificates issued by Let's Encrypt will work in most TLS clients (without security warnings) without any changes from defaults.  In contrast, Namecoin TLS certificates will only work (without security warnings) if Namecoin is installed.
 
 ### How does Namecoin compare to DANE?
