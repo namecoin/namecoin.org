@@ -362,6 +362,8 @@ Let's Encrypt also routinely censors journalism websites for political purposes.
 
 In contrast, Namecoin does not have any 3rd party who can censor your ability to receive TLS certificates.
 
+By default, Let's Encrypt will publish all of your subdomains to Certificate Transparency logs. This has been used for deanonymization attacks in the wild. Namecoin TLS certificates do not leak your subdomains.
+
 Let's Encrypt's services are entirely gratis.  For Namecoin, the pricing is more complicated.  In Namecoin, you create a private CA and place its public key into the blockchain; you can use that CA to issue as many certificates for your domain as you like without requiring additional blockchain transactions.  Issuing certificates from your private CA (e.g. to rotate your TLS server's keys) is gratis.  However, changing the set of private CA's (e.g. to immediately revoke old certificates before they expire) does require a blockchain transaction, which means you'll have to pay a transaction fee.  The extra storage used by your private CA's public key also implies that renewing your domain name will incur a higher transaction fee than if you weren't using TLS.
 
 TLS certificates issued by Let's Encrypt will work in most TLS clients (without security warnings) without any changes from defaults.  In contrast, Namecoin TLS certificates will only work (without security warnings) if Namecoin is installed.
