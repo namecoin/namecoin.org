@@ -362,7 +362,14 @@ Let's Encrypt also routinely censors journalism websites for political purposes.
 
 In contrast, Namecoin does not have any 3rd party who can censor your ability to receive TLS certificates.
 
-By default, Let's Encrypt will publish all of your subdomains to Certificate Transparency logs. This has been used for deanonymization attacks in the wild. Namecoin TLS certificates do not leak your subdomains.
+By default, Let's Encrypt will publish all of your subdomains to Certificate Transparency logs. This has been used for deanonymization attacks in the wild. Let's Encrypt does optionally support wildcard certificates, which mitigate this deanonymization vector. However, Let's Encrypt's wildcard certificates have the following drawbacks:
+
+1. Wildcard certificates are not enabled by default; secure defaults are important.
+2. Wildcard certificates cannot be easily auto-renewed, which eliminates a major UX benefit of Let's Encrypt compared to Namecoin.
+3. Wildcard certificates are only valid for one wildcarded label, e.g. `*.example.com` is valid but `*.*.example.com` is not valid.
+4. Wildcard certificates must be installed onto a publicly facing TLS server. If that server gets compromised, the TLS private key can be used to impersonate all other subdomains, even ones that are not supposed to be served by the compromised TLS server.
+
+In contrast, Namecoin TLS certificates do not leak your subdomains.
 
 Let's Encrypt's services are entirely gratis.  For Namecoin, the pricing is more complicated.  In Namecoin, you create a private CA and place its public key into the blockchain; you can use that CA to issue as many certificates for your domain as you like without requiring additional blockchain transactions.  Issuing certificates from your private CA (e.g. to rotate your TLS server's keys) is gratis.  However, changing the set of private CA's (e.g. to immediately revoke old certificates before they expire) does require a blockchain transaction, which means you'll have to pay a transaction fee.  The extra storage used by your private CA's public key also implies that renewing your domain name will incur a higher transaction fee than if you weren't using TLS.
 
