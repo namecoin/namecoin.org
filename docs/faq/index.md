@@ -287,6 +287,8 @@ While Komodia/Superfish is probably the most well-known and egregious example of
 
 The above list is not intended to be exhaustive; it is likely that there are others.  Writing TLS clients is hard, and in general only the major browser vendors do an acceptable job at it -- hence Filippo's advice.
 
+Additionally, TLS intercepting proxies interfere with TLS CCA (client certificate authentication). Given that TLS CCA is substantially preferable to password authentication, we don't want to harm that use case.
+
 That said, nothing in Namecoin prevents you from using a TLS intercepting proxy such as Let's DANE -- we simply advise against it.
 
 ### Why isn't ncdns part of Namecoin Core?  What is the distinction between the two?
