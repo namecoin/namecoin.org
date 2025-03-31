@@ -26,10 +26,12 @@ h2 {
 
 body > footer {
     background: #292e3c url({{ "images/fancy.jpg" | relative_url }}) center bottom;
+    /* Avoid tiling the background if the footer is too tall. */
+    background-size: cover;
     /* This height makes the background fully cover the footer in Tor Browser
      * Desktop, even if zoomed in or out a few times, and doesn't tile the background.
      */
-    height: 24em;
+    height: 28em;
 
     /* Cover up the tagline from the top of the page. */
     position: relative;
