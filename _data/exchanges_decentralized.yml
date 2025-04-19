@@ -1,4 +1,3 @@
 - "<a href='https://bisq.network/'><img class='exchange-logo' src='images/bisq_logo_green.png' alt='Bisq'></a> (uses Tor by default; memory-safe)"
 - "<a href='https://blockdx.com/'><img class='exchange-logo' src='images/BLOCKDX.png' alt='Block DX'></a> (uses atomic trades; memory-safe)"
-- "<a href='https://komodoplatform.com/'><picture><source srcset='images/AtomicDEX.svg' type='image/svg+xml'><img class='exchange-logo' src='images/AtomicDEX.png' alt='Komodo'></picture></a> (uses atomic trades)"
 - "<a href='https://basicswapdex.com/'>BasicSwap</a> (uses atomic trades; memory-safe)"
