@@ -9,7 +9,7 @@ title: Exchanges
 
 <span id="decentralized-exchanges" class="exchanges-gold">
 **Decentralized exchanges**<br>
-{% assign shuffled_exchanges_decentralized = site.data.exchanges_decentralized | sample: 3 %}{% for i in shuffled_exchanges_decentralized %}{{ i }}<br>{% endfor %}
+{% assign shuffled_exchanges_decentralized = site.data.exchanges_decentralized | sample: 2 %}{% for i in shuffled_exchanges_decentralized %}{{ i }}<br>{% endfor %}
 </span>
 
 <span class="exchanges-gold">
@@ -29,7 +29,7 @@ title: Exchanges
 
 <span class="exchanges-basic">
 **Basic level exchanges**<br>
-{% assign shuffled_exchanges_basic = site.data.exchanges_basic | sample: 11 %}{% for i in shuffled_exchanges_basic %}{{ i }}<br>{% endfor %}
+{% assign shuffled_exchanges_basic = site.data.exchanges_basic | sample: 7 %}{% for i in shuffled_exchanges_basic %}{{ i }}<br>{% endfor %}
 </span>
 
 Gold, silver and bronze level exchanges donate to the Namecoin project. The higher the donation the higher the level. Note that the exchanges are not verified in any way.
