@@ -9,7 +9,7 @@ title: Exchanges
 
 <span id="decentralized-exchanges" class="exchanges-gold">
 **Decentralized exchanges**<br>
-{% assign shuffled_exchanges_decentralized = site.data.exchanges_decentralized | sample: 3 %}{% for i in shuffled_exchanges_decentralized %}{{ i }}<br>{% endfor %}
+{% assign shuffled_exchanges_decentralized = site.data.exchanges_decentralized | sample: 4 %}{% for i in shuffled_exchanges_decentralized %}{{ i }}<br>{% endfor %}
 </span>
 
 <span class="exchanges-gold">
