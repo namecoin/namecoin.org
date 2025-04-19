@@ -1,2 +1,2 @@
-- "<a href='https://basicswapdex.com/'>BasicSwap</a> (uses atomic trades; memory-safe)"
+- "<a href='https://basicswapdex.com/'><picture><source srcset='images/basicswap-logo-dark-big.svg' type='image/svg+xml'><img class='exchange-logo' src='images/basicswap-logo-dark.png' alt='BasicSwap'></picture></a> (uses atomic trades; memory-safe)"
 - "<a href='https://bisq.network/'><img class='exchange-logo' src='images/bisq_logo_green.png' alt='Bisq'></a> (uses Tor by default; memory-safe)"
