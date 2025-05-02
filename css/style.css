@@ -186,7 +186,7 @@ p {
 
 /* The provided FreeBitcoins logo needs to be cropped to display properly; this CSS trick does so. */
 .exchange-logo-altquick {
-    width: 12em;
+    width: 27em;
     object-fit: cover;
 }
 
