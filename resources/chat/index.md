@@ -57,6 +57,6 @@ Two chat channels exist for Namecoin.  If you're not sure which access method to
 
 The Namecoin developers hold regular public meetings twice per month on #namecoin-dev.  If you're interested in getting involved with Namecoin development, or if you're just curious about what's happening, we highly recommend attending the meetings.
 
-Developer meetings occur on the 1st, 3rd, and 5th Tuesday of each month at 7 PM UTC.  [An ICS calendar suitable for import into a calendar application (e.g. Thunderbird) is here.](Namecoin-Development-Meetings.ics)
+Developer meetings occur on the 1st, 3rd, and 5th Tuesday of each month at 11 AM UTC.  [An ICS calendar suitable for import into a calendar application (e.g. Thunderbird) is here.](Namecoin-Development-Meetings.ics)
 
 [Minutes and logs of past developer meetings are available on GitHub.](https://github.com/midnightmagic/namecoin-meeting)
