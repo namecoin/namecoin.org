@@ -689,6 +689,7 @@ Unstoppable Domains also inherits [the problems of Ethereum](#why-isnt-namecoin-
 * Both are decentralized.
 * GNS has two name types: zTLD names, which are globally unique but not human-meaningful, and petnames, which are human-meaningful but not globally unique. Namecoin names are simultaneously globally unique and human-meaningful.
 * GNS overlays the root zone; Namecoin uses a suTLD ([why?](#why-does-namecoin-use-the-bit-special-use-top-level-domain-sutld-instead-of-overlaying-the-root-zone)).
+* Neither is standardized via IETF.
 
 ### How does Namecoin compare to Monero?
 
