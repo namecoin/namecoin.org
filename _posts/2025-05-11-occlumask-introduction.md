@@ -33,4 +33,4 @@ That being said, we still believe that Occlumask is a useful tool (otherwise we 
 
 We are currently in the prompt engineering phase, getting the LLM to produce the outputs that we want, with an acceptable level of consistency. To this end, we are also collecting example texts to test our program on. So far the results have been promising, with the LLM being able to correctly identify what and why a section of identifying text is as well as surprising us on one occasion, with a potential identifier that none of us could find before Occlumask flagged it for us.
 
-This work is funded by Power Up Privacy.
+This work was funded by Power Up Privacy.
