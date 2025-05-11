@@ -14,7 +14,7 @@ I first described this feature in [my 34C3 presentation on anonymity]({{ "/2018/
 
 ## Whonix/Tails Support
 
-Various anonymous OS's such as [Whonix](https://www.whonix.org/) and [Tails](https://tails.boum.org/) come with Tor preconfigured.  A major component of how these OS's handle preconfiguration is via environment variables that tell Tor-friendly applications such as Tor Browser and OnionShare where Tor's SOCKS port is.  Electrum-NMC now supports these environment variables, so it will automatically use the correct SOCKS port (with stream isolation) on Whonix and Tails instead of relying on transproxying.
+Various anonymous OS's such as [Whonix]({{ whonix_url }}) and [Tails](https://tails.boum.org/) come with Tor preconfigured.  A major component of how these OS's handle preconfiguration is via environment variables that tell Tor-friendly applications such as Tor Browser and OnionShare where Tor's SOCKS port is.  Electrum-NMC now supports these environment variables, so it will automatically use the correct SOCKS port (with stream isolation) on Whonix and Tails instead of relying on transproxying.
 
 As part of this work, I engaged with the Tor Applications Team on improving the specifications for Tor-friendly applications.  This work has been slower than hoped, but some major improvements have already worked their way through the review process, and I expect to deliver more improvements to these specifications in the coming months.
 

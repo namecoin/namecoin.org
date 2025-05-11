@@ -10,6 +10,7 @@ url: "https://www.namecoin.org" # the base hostname & protocol for your site
 files_url: "https://www.namecoin.org"
 forum_url: "https://forum.namecoin.org"
 metrics_url: "https://metrics.namecoin.org"
+whonix_url: "https://www.whonix.org"
 twitter_username: jekyllrb
 github_username:  jekyll
 
