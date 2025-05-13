@@ -93,7 +93,7 @@ Robert works on tools for detecting and preventing proxy leaks in the Namecoin a
 **C++ GUI Developer & Threat Modeling Specialist** <br>
 Rose works on the Namecoin Core GUI and related codebases. She also helps organize hacker conference events, and optimizes Namecoin for users with interesting threat models.
 
-OpenPGP (Email): `F1F6 CBBF 3D7E 7EB0 FE6D  C041 ED63 BB48 8754 1CB1` [(download public key)]({{ "/RoseTuring-Email.asc" | relative_url }})
+OpenPGP (Email): `F1F6 CBBF 3D7E 7EB0 FE6D  C041 ED63 BB48 8754 1CB1` [(download public key)]({{ "/RoseTuring-Email.asc" | relative_url }})<br>
 OpenPGP (Signer): `FD83 66A8 07A9 9FA2 7FD9  CCEA 9FE3 BFDD A6C5 3495` [(download public key)]({{ "/RoseTuring.asc" | relative_url }})
 
 ## Alice Margatroid
