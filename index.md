@@ -62,7 +62,7 @@ What does Namecoin do under the hood?
 
 [Earlier news]({{ "/news/" | relative_url }})
 
-For the latest news go to the [Namecoin forum]({{ site.forum_url }}/) or check out [r/namecoin](https://www.reddit.com/r/namecoin).
+For the latest news go to the [Namecoin forum]({{ site.forum_url }}/) or check out [r/Namecoin](https://www.reddit.com/r/Namecoin).
 
 Official anouncements will also be made on [this BitcoinTalk thread](https://bitcointalk.org/index.php?topic=236340.0).
 
