@@ -5,6 +5,10 @@ title: Presentations
 
 {::options parse_block_html="true" /}
 
+## 38C3
+
+[Videos are here.]({{ "/2025/03/30/38c3-summary.html" | relative_url }})
+
 ## GPN 22 / MoneroKon 4
 
 [Videos are here.]({{ "/2024/07/24/tor-2024-gpn-22-monerokon-4-summary.html" | relative_url }})
