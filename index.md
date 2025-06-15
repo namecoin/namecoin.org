@@ -43,8 +43,8 @@ What does Namecoin do under the hood?
 
 ## More Information
 
-* [Namecoin Identities](https://nameid.org)
 * [.bit DNS]({{ "/dot-bit/" | relative_url }})
+* [Namecoin Identities](https://nameid.org)
 
 ## News
 
