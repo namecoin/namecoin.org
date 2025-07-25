@@ -42,3 +42,5 @@ Tor-Compatible Isolation: Supports enforcing Tor-style stream isolation using SO
 Regex-Based Rules: Users can define custom regex patterns for valid auth fields (e.g. session-*, profile-[0-9]+) to ensure proper identity separation.
 
 This gives fine-grained control over SOCKS5 behavior and helps detect apps that bypass proxy isolation.
+
+This work was funded by NLnet Foundation's Next Generation Internet Zero Core Fund.
