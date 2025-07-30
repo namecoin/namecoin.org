@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Namecoin Core 28.0 (Almost) Released"
+title: "Namecoin Core 28.0 Released (UPDATED)"
 author: Jeremy Rand
 tags: [Releases, Namecoin Core Releases]
 ---
 
-Namecoin Core 28.0 has been released on the [Beta Downloads page]({{ "/download/betas/#namecoin-core" | relative_url }}).
+Namecoin Core 28.0 has been released on the [Downloads page]({{ "/download/#namecoin-core-client-stable-release" | relative_url }}).
 
 Here's what's new since 22.0:
 
@@ -46,8 +46,8 @@ Known potential issues (will hopefully be resolved soon):
 * Some GUI lag is present when switching to the Overview and Transactions tabs, and when scrolling in the Transactions tab.
 * Old BDB-based wallets are no longer supported (per upstream policy). Migration of BDB wallets to the new Descriptor wallets is not thoroughly tested, so if you have high-value BDB wallets, you may want to back them up and keep an old version of Namecoin Core around until you are confident that your wallets migrated properly.
 
-Why is it on the Beta Downloads page, you ask? As of this writing, we only have 1 set of Guix signatures, and we require 2 sets to do a release. For logistical optimization reasons, we have decided to upload the binaries and publish the changelog now. However, do not consider the release to be official until a 2nd set of matching Guix signatures has had a PR submitted (which we expect to be in the next week). We fully expect these binaries to be bit-for-bit identical to the ones that we place on the main Downloads page in a little while. If you see another set of matching Guix signatures by the time you read this, then you can safely conclude that these binaries are of the quality you would normally expect on the main Downloads page.
+~~Why is it on the Beta Downloads page, you ask? As of this writing, we only have 1 set of Guix signatures, and we require 2 sets to do a release. For logistical optimization reasons, we have decided to upload the binaries and publish the changelog now. However, do not consider the release to be official until a 2nd set of matching Guix signatures has had a PR submitted (which we expect to be in the next week). We fully expect these binaries to be bit-for-bit identical to the ones that we place on the main Downloads page in a little while. If you see another set of matching Guix signatures by the time you read this, then you can safely conclude that these binaries are of the quality you would normally expect on the main Downloads page.~~
 
-Huge thanks to Rose Turing for Guix-signing this release. Also huge pre-emptive thanks to Robert Nganga for Guix-signing this release in the next week or so.
+Huge thanks to Rose Turing and mjgill89 for Guix-signing this release. Also huge pre-emptive thanks to Robert Nganga for Guix-signing this release in the next week or so.
 
 This work was funded by Cyphrs.

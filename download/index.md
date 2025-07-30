@@ -79,7 +79,7 @@ Requires setting up a Namecoin client (Namecoin Core, ConsensusJ-Namecoin, or El
 * Recommended for users who don't intend to register new names.
 * Recommended for users who are comfortable registering new names via the command-line.
 
-Current release: 22.0.
+Current release: 28.0.
 
 <div class="row">
 
@@ -87,10 +87,10 @@ Current release: 22.0.
 
 ### Windows
 
-**Most users should install ncdns (see above) instead; it includes Namecoin Core.**
+**Most Windows users should install ncdns (see above) instead; it includes Namecoin Core.**
 
-* [64-bit installer]({{ site.files_url }}/files/namecoin-core/namecoin-core-22.0/namecoin-nc22.0-win64-setup-unsigned.exe)
-* [64-bit zip]({{ site.files_url }}/files/namecoin-core/namecoin-core-22.0/namecoin-nc22.0-win64.zip)
+* [64-bit installer]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-win64-setup-unsigned.exe)
+* [64-bit zip]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-win64.zip)
 
 </div>
 
@@ -98,12 +98,12 @@ Current release: 22.0.
 
 ### GNU/Linux
 
-* [POWER 64-bit BE]({{ site.files_url }}/files/namecoin-core/namecoin-core-22.0/namecoin-nc22.0-powerpc64-linux-gnu.tar.gz)
-* [POWER 64-bit LE]({{ site.files_url }}/files/namecoin-core/namecoin-core-22.0/namecoin-nc22.0-powerpc64le-linux-gnu.tar.gz)
-* [ARM 64-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-22.0/namecoin-nc22.0-aarch64-linux-gnu.tar.gz)
-* [ARM 32-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-22.0/namecoin-nc22.0-arm-linux-gnueabihf.tar.gz)
-* [RISC-V 64-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-22.0/namecoin-nc22.0-riscv64-linux-gnu.tar.gz)
-* [x86 64-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-22.0/namecoin-nc22.0-x86_64-linux-gnu.tar.gz)
+* [POWER 64-bit BE]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-powerpc64-linux-gnu.tar.gz)
+* [POWER 64-bit LE (older release: v22.0)]({{ site.files_url }}/files/namecoin-core/namecoin-core-22.0/namecoin-nc22.0-powerpc64le-linux-gnu.tar.gz)
+* [ARM 64-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-aarch64-linux-gnu.tar.gz)
+* [ARM 32-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-arm-linux-gnueabihf.tar.gz)
+* [RISC-V 64-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-riscv64-linux-gnu.tar.gz)
+* [x86 64-bit]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-x86_64-linux-gnu.tar.gz)
 
 </div>
 
@@ -111,15 +111,20 @@ Current release: 22.0.
 
 ### macOS
 
-* [dmg]({{ site.files_url }}/files/namecoin-core/namecoin-core-22.0/namecoin-nc22.0-osx-unsigned.dmg)
-* [tar.gz]({{ site.files_url }}/files/namecoin-core/namecoin-core-22.0/namecoin-nc22.0-osx64.tar.gz)
+* (No DMG currently available)
+* [ARM 64-bit app]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-arm64-apple-darwin-unsigned.zip)
+* [ARM 64-bit tar.gz]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-arm64-apple-darwin.tar.gz)
+* [x86 64-bit app]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-x86_64-apple-darwin-unsigned.zip)
+* [x86 64-bit tar.gz]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0-x86_64-apple-darwin.tar.gz)
 
 </div>
 
 </div>
 
-* [Guix signatures](https://github.com/namecoin/guix.sigs/tree/master/nc22.0)
-* [Source code tarball]({{ site.files_url }}/files/namecoin-core/namecoin-core-22.0/namecoin-nc22.0.tar.gz)
+* [Guix signatures](https://github.com/namecoin/guix.sigs/tree/master/28.0)
+* [Guix signatures (for POWER 64-bit LE v22.0)](https://github.com/namecoin/guix.sigs/tree/master/nc22.0)
+* [Source code tarball]({{ site.files_url }}/files/namecoin-core/namecoin-core-28.0/namecoin-28.0.tar.gz)
+* [Source code tarball (for POWER 64-bit LE v22.0)]({{ site.files_url }}/files/namecoin-core/namecoin-core-22.0/namecoin-nc22.0.tar.gz)
 * [Source code](https://github.com/namecoin/namecoin-core/)
 
 ## Namecoin Core Client (with Qt Name Tab)
