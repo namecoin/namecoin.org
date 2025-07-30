@@ -237,7 +237,7 @@ Download [v0.8.1 installer]({{ site.files_url }}/files/nmcontrol/nmcontrol-0.8.1
 
 ### GNU/Linux and macOS
 
-With Python 2.7 installed you can run nmcontrol.py directly from [source](https://github.com/namecoin/nmcontrol). If you need help ask on Github or on the [forum]({{ site.forum_url }}/viewtopic.php?f=8&t=2402).
+With Python 2.7 installed you can run `nmcontrol.py` directly from [source](https://github.com/namecoin/nmcontrol). If you need help ask on GitHub or on the [forum]({{ site.forum_url }}/viewtopic.php?f=8&t=2402).
 
 </div>
 
