@@ -41,7 +41,7 @@ So here's the new workflow:
 5. When Firefox sees this certificate chain, it sends a PKCS#11 request to ncp11 that includes the public key as part of the Subject DN or Issuer DN.
 6. Encaya can then compare this public key to the hashed TLSA record in the blockchain. It if matches, Encaya uses the public key in its synthesized CA.
 7. Chromium and Firefox don't know that anything funky has happened. Sure, there's an intermediate CA with a really long AIA Issuer URL and Issuer Serial Number. But Chromium and Firefox don't care about that.
-8. On-chain savings achieved. We win!
+8. On-chain savings achieved. *We win!*
 
 I've implemented the above in Encaya, ncp11, and generate_nmc_cert. What do the savings look like?
 
