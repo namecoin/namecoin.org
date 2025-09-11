@@ -18,7 +18,7 @@ So, why did we need full public keys in the blockchain (as opposed to a public k
 1. Encaya needs to synthesize a CA certificate when the browser asks for it.
 2. This synthesized CA certificate needs to contain the public key that the domain owner picked.
 3. The browser will *not* provide any public keys that the TLS server presented in the certificate chain.
-4. THEREFORE, Encaya needs to get the public key from the blockchain, since there's no other way to get it given the API constraints. QED. Right...?
+4. **Therefore**, Encaya needs to get the public key from the blockchain, since there's no other way to get it given the API constraints. QED. *Right...?*
 
 Um, about that last assumption. Is there really no other way to get the public key given the API constraints?
 
