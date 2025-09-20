@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "`generate_nmc_cert` is now `ncgencert`"
+title: "generate_nmc_cert is now ncgencert"
 author: Jeremy Rand
 tags: [News]
 ---
