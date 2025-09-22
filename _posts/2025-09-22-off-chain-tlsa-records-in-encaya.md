@@ -5,7 +5,7 @@ author: Jeremy Rand
 tags: [News]
 ---
 
-Now that hashed TLSA records are a thing, it's time to ask our inner mad scientist: can we do any better than that?
+Now that [hashed TLSA records]({{ "/2025/09/11/hashed-tlsa-records-in-encaya.html" | relative_url }}) are a thing, it's time to ask our inner mad scientist: can we do any better than that?
 
 What would be better for scalability than only putting a hash on the blockchain? What about... not putting *any* TLS things on the blockchain? Sounds impossible, right?
 
