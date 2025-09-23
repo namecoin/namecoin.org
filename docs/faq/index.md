@@ -159,6 +159,18 @@ Political concerns:
 
 In addition, it's not clear that there would even be any significant benefit to counterbalance these concerns.  Namecoin intentionally makes different tradeoffs from the DNS.  For example, the DNS is much more scalable than Namecoin, can protect name owners from trivial deanonymization much better than Namecoin can, and doesn't rely on comparatively weak game-theoretic security properties as Namecoin does.  Namecoin has some benefits that counterbalance these weaknesses (e.g. the non-reliance on trusted third parties), but serving Namecoin data from public DNS infrastructure would provide the **union** of Namecoin's and the DNS's weaknesses, while providing the **intersection** of Namecoin's and the DNS's strengths.  Users who require a DNS-like naming system that works without any software installation are likely to be better off simply using the DNS.
 
+### Why doesn't Namecoin use a DNS domain (e.g. `.bit.com`) as a domain suffix?
+
+This is sometimes proposed as a centralized inproxy mechanism, with the mildly unique attribute that users must change the domains they visit every time they visit a site, rather than changing their DNS resolver once. The UX benefits of this approach over a DNS resolver that operates a centralized inproxy are dubious, but in any event they introduce all of the security vulnerabilities [that all centralized inproxies have](#why-focus-on-getting-browsers-and-oss-to-support-namecoin-instead-of-getting-isps-or-public-dns-resolvers-eg-google-dns-to-do-so).
+
+They also introduce some additional problems:
+
+1. Links to `.bit.com` would have to be rewritten to `.bit` on the client side, otherwise users who *do* have Namecoin installed would lose all security. (A bug in this rewriting code would cause legitimate Namecoin users to silently fall back to zero security.)
+2. Server operators would need to add explicit support for the suffix, since otherwise neither the HTTP Host header nor the TLS certificate would validate. (The suffix operator could "work around" this by MITMing all traffic.)
+3. If `bit.com` were to ever expire or be seized, all hyperlinks across the web would need to change. (Any hyperlinks that didn't change would then be vulnerable to attack by whoever next registers `bit.com`.)
+
+Various Namecoin competitors (e.g. "PKT Cash") do utilize such suffixes; those projects are scams and are likely running wiretaps and interception on behalf of governments, organized crime, and whoever else is willing to pay them. Indeed, an ENS developer's domain suffix inproxy was [known to wiretap users on behalf of the U.S. and Singaporean governments](https://medium.com/@c5/tor2web-proxies-are-using-google-analytics-to-secretly-track-users-fd245dbc81c5), and a U.S. court document [referenced that domain suffix inproxy](https://darknetlive.com/post/nasa-contractor-used-a-tor2web-proxy-to-download-child-porn/) when seeking an arrest warrant against a third party.
+
 ### Why focus on browser add-ons and OS packages instead of native browser and OS support?
 
 Because browser add-ons and OS packages are the standard method by which browser and OS vendors evaluate features for future inclusion.  In our discussions with browser vendors and OS vendors (even the ones who are enthusiastic about bundling Namecoin by default), one of the first things they ask for as a prerequisite to inclusion by default is a browser add-on or an OS package.
