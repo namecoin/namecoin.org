@@ -348,7 +348,16 @@ The existence of Namecoin as a merge-mined sidechain acts as a de facto increase
 
 ### How does Namecoin compare to Tor Onion Services?
 
-The Tor Project's Onion Services (which have a `.onion` top-level domain) use domains which are a public key hash.  This means that their domain names are not human-meaningful, whereas Namecoin domain names are human-meaningful.  Namecoin's `.bit` domains can point to `.onion` domains, providing a human-meaningful naming layer on top of Tor Onion Services.  Blockchain-based systems like Namecoin are, at this time, unable to match the cryptographic security guarantees (against impersonation or deanonymization attacks) that systems like Onion Service names provide when used directly, but Namecoin's human-meaningful names do make Namecoin more resistant than Onion Service names to some classes of attacks that exploit human psychology rather than breaking cryptography.  For example, humans have trouble remembering a public key hash or recognizing a public key hash as the correct one; this is much better with meaningful names such as Namecoin names (or DNS names).  Attackers can exploit this property of Onion Service names in order to trick users into visiting the incorrect website.  We believe that both systems serve a useful purpose, and determining whether direct usage of Onion Service names or Namecoin naming for Onion Services is more secure for a given user requires consideration of that user's threat model.
+The Tor Project's Onion Services, with the `.onion` top-level domain, use domain names that are hashes of public keys.
+This means that their domain names are not human-meaningful, unlike Namecoin's.
+Namecoin’s `.bit` domains can point to `.onion` domains.
+This makes it possible to give human-meaningful names to Tor Onion Services.
+
+Right now, blockchain-based systems like Namecoin are less secure against impersonation and deanonymization attacks than systems like Onion Service names, used directly, are.
+However, Namecoin's human-meaningful names protect against phishing attacks better; it's much easier to remember a meaningful name than an arbitrary public key.
+
+We believe that both systems serve a useful purpose.
+To determine whether it's more secure for you to directly use Onion Service names or to point a Namecoin name to your Onion Service, you have to consider your threat model individually.
 
 ### How does Namecoin compare to Let's Encrypt?
 
