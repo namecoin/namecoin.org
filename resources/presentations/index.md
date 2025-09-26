@@ -7,7 +7,7 @@ title: Presentations
 
 ## Global Conference on Educational Robotics 2025
 
-[Video, slides, and paper are here.]({{ "/2025/09/24/gcer-2025.html" | relative_url }})
+[Video, slides, and paper are here.]({{ "/2025/09/26/gcer-2025.html" | relative_url }})
 
 ## 38C3
 
