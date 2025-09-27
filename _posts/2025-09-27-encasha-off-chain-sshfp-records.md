@@ -13,7 +13,7 @@ In principle, the main things we would need to pull this off are:
 2. Some way for that blob to get passed to code we control (*during* the SSH handshake).
 3. Some way to mark a public key as trusted (also *during* the SSH handshake).
 
-For requirement 1, guess what? [SSH has certificates](https://www.ietf.org/archive/id/draft-miller-ssh-cert-01.html). SSH certificates are surprisingly rarely used, but they are a thing. SSH certificates [can have extensions](https://www.ietf.org/archive/id/draft-miller-ssh-cert-01.html#name-certificate-extensions) in them.
+For requirement 1, guess what? [SSH has certificates](https://datatracker.ietf.org/doc/html/draft-miller-ssh-cert-04). SSH certificates are surprisingly rarely used, but they are a thing. SSH certificates [can have extensions](https://datatracker.ietf.org/doc/html/draft-miller-ssh-cert-04#name-certificate-extensions) in them.
 
 For requirement 2 and 3, the [OpenSSH `KnownHostsCommand` config option](https://man.openbsd.org/ssh_config#KnownHostsCommand) does exactly this.
 
