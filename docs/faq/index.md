@@ -169,7 +169,7 @@ They also introduce some additional problems:
 2. Server operators would need to add explicit support for the suffix, since otherwise neither the HTTP Host header nor the TLS certificate would validate. (The suffix operator could "work around" this by MITMing all traffic.)
 3. If `bit.com` were to ever expire or be seized, all hyperlinks across the web would need to change. (Any hyperlinks that didn't change would then be vulnerable to attack by whoever next registers `bit.com`.)
 
-Various Namecoin competitors (e.g. "PKT Cash") do utilize such suffixes; those projects are scams and are likely running wiretaps and interception on behalf of governments, organized crime, and whoever else is willing to pay them. Indeed, an ENS developer's domain suffix inproxy was [known to wiretap users on behalf of the U.S. and Singaporean governments](https://medium.com/@c5/tor2web-proxies-are-using-google-analytics-to-secretly-track-users-fd245dbc81c5), and a U.S. court document [referenced that domain suffix inproxy](https://darknetlive.com/post/nasa-contractor-used-a-tor2web-proxy-to-download-child-porn/) when seeking an arrest warrant against a third party.
+Various Namecoin competitors (e.g. "PKT Cash") do utilize such suffixes; those projects are scams and are likely running wiretaps and interception on behalf of governments, organized crime, and whoever else is willing to pay them. Indeed, an ENS developer's domain suffix inproxy was [known to wiretap users on behalf of the U.S. and Singaporean governments](https://medium.com/@c5/tor2web-proxies-are-using-google-analytics-to-secretly-track-users-fd245dbc81c5), and a U.S. court document [referenced that domain suffix inproxy](https://web.archive.org/web/20180930051447/https://darknetlive.com/post/nasa-contractor-used-a-tor2web-proxy-to-download-child-porn/) when seeking an arrest warrant against a third party.
 
 ### Why focus on browser add-ons and OS packages instead of native browser and OS support?
 
@@ -644,7 +644,7 @@ This McAfee scam that used comparable marketing language to ENS was later the re
 
 (That Pwnie Award was collected by [a Namecoin developer](https://rya.nc/bitfi-wallet.html).)
 
-One of the ENS developers (Virgil Griffith) also is known for [running wiretap infrastructure](https://medium.com/@c5/tor2web-proxies-are-using-google-analytics-to-secretly-track-users-fd245dbc81c5) on behalf of the U.S. and Singaporean governments. A U.S. court document [referenced Virgil's wiretap infrastructure](https://darknetlive.com/post/nasa-contractor-used-a-tor2web-proxy-to-download-child-porn/) when seeking an arrest warrant against a third party.
+One of the ENS developers (Virgil Griffith) also is known for [running wiretap infrastructure](https://medium.com/@c5/tor2web-proxies-are-using-google-analytics-to-secretly-track-users-fd245dbc81c5) on behalf of the U.S. and Singaporean governments. A U.S. court document [referenced Virgil's wiretap infrastructure](https://web.archive.org/web/20180930051447/https://darknetlive.com/post/nasa-contractor-used-a-tor2web-proxy-to-download-child-porn/) when seeking an arrest warrant against a third party.
 
 In addition to the ENS-specific concerns, ENS also inherits [the problems of Ethereum](#why-isnt-namecoin-implemented-as-an-ethereum-contract), on which they are dependent.
 
