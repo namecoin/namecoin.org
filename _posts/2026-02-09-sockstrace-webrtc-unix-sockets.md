@@ -1,20 +1,32 @@
 # WebRTC Proxy Leaks and Unix Socket Enforcement
 
-## WebRTC Proxy Leaks in Brave, Firefox, and Chromium
+## WebRTC Route Discovery and Proxy Leak Semantics
 
-SocksTrace identified a WebRTC-related proxy leak in Firefox, Brave, and Chromium caused by a technique used during ICE (Interactive Connectivity Establishment) negotiation.
+SocksTrace identified a WebRTC privacy vulnerability caused by a technique used during ICE (Interactive Connectivity Establishment) negotiation.
 
 Browsers issue short-lived `connect()` calls on UDP sockets to Google DNS addresses (`8.8.8.8:53`) to determine the default local route. No packets are sent and the socket is immediately closed, but the syscalls bypass proxy routing and expose local addressing information.
 
 ### The Connected UDP Trick
 
-In Firefox, Mozilla explained that these are `connect()` calls on UDP sockets used to discover which local address would be used to route to the internet in general. They refer to this as the "connected UDP trick." They emphasized that no network traffic occurs and that the socket is immediately closed.
+These are `connect()` calls on UDP sockets used to discover which local address would be used to route to the internet in general. This is often called the "connected UDP trick."
 
 From a network monitoring perspective, nothing happens. Wireshark would show no packets. But from a syscall monitoring perspective, the application is making direct network calls that bypass the proxy and reveal local routing information.
 
+### What Counts as a Proxy Leak?
+
+In practice, "proxy leak" can refer to multiple classes of behavior:
+
+1. Outbound packets that do not go through the configured proxy.
+2. Inbound or listening behavior that exposes network reachability outside the expected proxied path.
+3. Any direct interaction with the host network stack that bypasses the proxy, even if no packets are emitted.
+
+Wireshark is excellent for class (1). Port scanners and reachability tests can detect class (2). SocksTrace can detect all three classes because it monitors syscalls and socket behavior directly.
+
+The WebRTC route-discovery issue described above is class (3): no packets are transmitted, but privacy-sensitive network stack interaction still occurs outside the proxy path.
+
 ### Browser Responses
 
-**Brave (Tor mode)** was affected by the same issue. In contrast to Mozilla's response, Brave acknowledged the leak and mitigated it by disabling WebRTC in Tor mode. The report was accepted and resulted in a **$400 bug bounty**.
+**Brave (Tor mode)** was affected by this issue. Brave acknowledged it and mitigated it by disabling WebRTC in Tor mode. The report was accepted and resulted in a **$400 bug bounty**.
 
 **The Tor Browser Team** had already mitigated this issue in Mullvad Browser by disabling the "connected UDP trick" entirely, because leaking information about the user's local network, even without transmitting traffic outside the proxy, poses a privacy risk and could be used for fingerprinting.
 
