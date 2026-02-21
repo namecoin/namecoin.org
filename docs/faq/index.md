@@ -50,6 +50,17 @@ If you have the [ZeroNet](https://zeronet.io/) software installed, you can visit
 
 See [Documentation for Name Owners]({{ "/docs/name-owners/" | relative_url }}).
 
+### I intend to register a Namecoin name. Should I tell anyone of my intent?
+
+No, do not tell anyone of your intent until you have already registered your name (i.e. both the pre-registration and registration transaction are confirmed). Otherwise, whoever you tell (or whoever they tell) can frontrun you and take the name for themself.
+
+### I want to suggest that someone else register a Namecoin name. Is this safe?
+
+Don't suggest this publicly; otherwise someone else could frontrun them and take the name for themself. Your best options are:
+
+* Suggest the name registration via direct message via an end-to-end-encrypted medium. Consider the risks of metadata leaks (i.e. any negative consequences if an attacker determines that you were messaging to the person who ends up using the name).
+* Register the name yourself and then transfer it to them. Consider the risks of blockchain analysis (i.e. any negative consequences if an attacker determines that you transferred the name to whoever ends up using it).
+
 ### Do I need to use TLS with a .bit domain?
 
 Yes, you need TLS (or some other transport security layer, e.g. SSH) in order to avoid vulnerability to eavesdropping and man-in-the-middle (MITM) attacks; Namecoin doesn't magically remove this requirement. The only protection that Namecoin grants you is that if you use TLS, and the certificate doesn't match the blockchain, you will get a certificate warning (even if a public CA is participating in the attack). If you do not use TLS, or bypass a certificate warning, Namecoin cannot protect you.
