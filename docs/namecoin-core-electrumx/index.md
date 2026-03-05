@@ -187,16 +187,6 @@ sudo systemctl stop electrumx namecoind
     /home/electrumx/electrumx/electrumx_rpc getinfo
 ~~~
 
-## How blockchain.name.get\_value\_proof Works
-
-When an Electrum-NMC client calls `name_show` using protocol 1.4.3, it issues a `blockchain.name.get_value_proof` request.  The ElectrumX server responds with:
-
-1. The full name update history for that scripthash, in reverse chronological order.
-2. For each update: the raw transaction, a Merkle proof tying the txid to the block header, and (if the block is at or below the client's checkpoint height) a header proof tying the block to the checkpoint.
-3. The history stops at the `NAME_EXPIRATION` boundary (36,000 blocks for Namecoin).
-
-The client can then verify the entire chain of name updates without trusting the server.
-
 ## Security Notes
 
 * **RPC credentials** are randomly generated and stored in both `namecoin.conf` and `electrumx.conf` with permissions restricted to their respective users.
