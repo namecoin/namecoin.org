@@ -17,7 +17,7 @@ You can buy Namecoin-branded merchandise (e.g. T-shirts and stickers) from our f
 
 ## Run a full node
 
-Full nodes (Namecoin Core nodes) are the core of the Namecoin P2P network.  The more people run full nodes, and the more geographically and jurisdictionally diverse those full nodes are, the stronger the Namecoin P2P network becomes.  Please consider running [Namecoin Core]({{ "/download/#namecoin-core-client-with-qt-name-tab" | relative_url }}) on as many of the following networks as you can:
+Full nodes (Namecoin Core nodes) are the core of the Namecoin P2P network.  The more people run full nodes, and the more geographically and jurisdictionally diverse those full nodes are, the stronger the Namecoin P2P network becomes.  See our [Debian deployment guide for Namecoin Core + ElectrumX]({{ "/docs/namecoin-core-electrumx/" | relative_url }}) for automated server setup instructions.  Please consider running [Namecoin Core]({{ "/download/#namecoin-core-client-with-qt-name-tab" | relative_url }}) on as many of the following networks as you can:
 
 * IPv4 (preferably allowing incoming connections)
 * IPv6 (preferably allowing incoming connections)
@@ -44,7 +44,7 @@ DNS seeds help Namecoin users find peers.  You can run a DNS seed via [dnsseeder
 
 ## Run an ElectrumX server
 
-ElectrumX servers help Electrum-NMC users synchronize the blockchain more quickly and securely.  You can run one by installing [ElectrumX](https://github.com/spesmilo/electrumx) (set `COIN=Namecoin`).  Please consider running ElectrumX on as many of the following networks as you can, for both mainnet and testnet:
+ElectrumX servers help Electrum-NMC users synchronize the blockchain more quickly and securely.  You can run one by installing [ElectrumX](https://github.com/spesmilo/electrumx) (set `COIN=Namecoin`).  Our [Debian deployment guide]({{ "/docs/namecoin-core-electrumx/" | relative_url }}) covers automated setup of both Namecoin Core and ElectrumX together.  Please consider running ElectrumX on as many of the following networks as you can, for both mainnet and testnet:
 
 * Raw IPv4 address
 * Raw IPv6 address
