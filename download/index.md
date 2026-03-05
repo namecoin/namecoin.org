@@ -68,6 +68,10 @@ Requires setting up a Namecoin client (Namecoin Core, ConsensusJ-Namecoin, or El
 
 [Tor Browser Nightly](https://nightlies.tbb.torproject.org/nightly-builds/tor-browser-builds/) for GNU/Linux has experimental Namecoin resolution built-in.  Set the environment variable `TOR_ENABLE_NAMECOIN=1` to use it.
 
+## Server Deployment Guide (Debian)
+
+Want to run a Namecoin Core full node and ElectrumX server on Debian?  See the [Namecoin Core + ElectrumX deployment guide]({{ "/docs/namecoin-core-electrumx/" | relative_url }}).  It includes an automated script with Guix signature verification and systemd service setup.
+
 ## Namecoin Core Client (Stable Release)
 
 * Name wallet: includes command-line interface for registering, tracking, updating, and renewing names (if you don't already have some namecoins, you'll need to [buy some at an exchange]({{ "/exchanges/" | relative_url }})).
