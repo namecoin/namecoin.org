@@ -50,6 +50,17 @@ If you have the [ZeroNet](https://zeronet.io/) software installed, you can visit
 
 See [Documentation for Name Owners]({{ "/docs/name-owners/" | relative_url }}).
 
+### I intend to register a Namecoin name. Should I tell anyone of my intent?
+
+No, do not tell anyone of your intent until you have already registered your name (i.e. both the pre-registration and registration transaction are confirmed). Otherwise, whoever you tell (or whoever they tell) can frontrun you and take the name for themself.
+
+### I want to suggest that someone else register a Namecoin name. Is this safe?
+
+Don't suggest this publicly; otherwise someone else could frontrun them and take the name for themself. Your best options are:
+
+* Suggest the name registration via direct message via an end-to-end-encrypted medium. Consider the risks of metadata leaks (i.e. any negative consequences if an attacker determines that you were messaging to the person who ends up using the name).
+* Register the name yourself and then transfer it to them. Consider the risks of blockchain analysis (i.e. any negative consequences if an attacker determines that you transferred the name to whoever ends up using it).
+
 ### Do I need to use TLS with a .bit domain?
 
 Yes, you need TLS (or some other transport security layer, e.g. SSH) in order to avoid vulnerability to eavesdropping and man-in-the-middle (MITM) attacks; Namecoin doesn't magically remove this requirement. The only protection that Namecoin grants you is that if you use TLS, and the certificate doesn't match the blockchain, you will get a certificate warning (even if a public CA is participating in the attack). If you do not use TLS, or bypass a certificate warning, Namecoin cannot protect you.
@@ -169,7 +180,7 @@ They also introduce some additional problems:
 2. Server operators would need to add explicit support for the suffix, since otherwise neither the HTTP Host header nor the TLS certificate would validate. (The suffix operator could "work around" this by MITMing all traffic.)
 3. If `bit.com` were to ever expire or be seized, all hyperlinks across the web would need to change. (Any hyperlinks that didn't change would then be vulnerable to attack by whoever next registers `bit.com`.)
 
-Various Namecoin competitors (e.g. "PKT Cash") do utilize such suffixes; those projects are scams and are likely running wiretaps and interception on behalf of governments, organized crime, and whoever else is willing to pay them. Indeed, an ENS developer's domain suffix inproxy was [known to wiretap users on behalf of the U.S. and Singaporean governments](https://medium.com/@c5/tor2web-proxies-are-using-google-analytics-to-secretly-track-users-fd245dbc81c5), and a U.S. court document [referenced that domain suffix inproxy](https://darknetlive.com/post/nasa-contractor-used-a-tor2web-proxy-to-download-child-porn/) when seeking an arrest warrant against a third party.
+Various Namecoin competitors (e.g. "PKT Cash") do utilize such suffixes; those projects are scams and are likely running wiretaps and interception on behalf of governments, organized crime, and whoever else is willing to pay them. Indeed, an ENS developer's domain suffix inproxy was [known to wiretap users on behalf of the U.S. and Singaporean governments](https://medium.com/@c5/tor2web-proxies-are-using-google-analytics-to-secretly-track-users-fd245dbc81c5), and a U.S. court document [referenced that domain suffix inproxy](https://web.archive.org/web/20180930051447/https://darknetlive.com/post/nasa-contractor-used-a-tor2web-proxy-to-download-child-porn/) when seeking an arrest warrant against a third party.
 
 ### Why focus on browser add-ons and OS packages instead of native browser and OS support?
 
@@ -644,7 +655,7 @@ This McAfee scam that used comparable marketing language to ENS was later the re
 
 (That Pwnie Award was collected by [a Namecoin developer](https://rya.nc/bitfi-wallet.html).)
 
-One of the ENS developers (Virgil Griffith) also is known for [running wiretap infrastructure](https://medium.com/@c5/tor2web-proxies-are-using-google-analytics-to-secretly-track-users-fd245dbc81c5) on behalf of the U.S. and Singaporean governments. A U.S. court document [referenced Virgil's wiretap infrastructure](https://darknetlive.com/post/nasa-contractor-used-a-tor2web-proxy-to-download-child-porn/) when seeking an arrest warrant against a third party.
+One of the ENS developers (Virgil Griffith) also is known for [running wiretap infrastructure](https://medium.com/@c5/tor2web-proxies-are-using-google-analytics-to-secretly-track-users-fd245dbc81c5) on behalf of the U.S. and Singaporean governments. A U.S. court document [referenced Virgil's wiretap infrastructure](https://web.archive.org/web/20180930051447/https://darknetlive.com/post/nasa-contractor-used-a-tor2web-proxy-to-download-child-porn/) when seeking an arrest warrant against a third party.
 
 In addition to the ENS-specific concerns, ENS also inherits [the problems of Ethereum](#why-isnt-namecoin-implemented-as-an-ethereum-contract), on which they are dependent.
 

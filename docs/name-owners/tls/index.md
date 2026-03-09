@@ -13,7 +13,13 @@ You should install the latest release of [the `generate_nmc_cert` tool]({{ "/dow
 
 ## Concepts
 
-In Namecoin, the blockchain stores the public key of a *CA certificate* (certificate authority certificate) that you've created.  You can use that CA certificate to *issue* TLS certificates, or issue additional CA certificates (referred to as *subordinate CA certificates*).  Issuing TLS certificates or subordinate CA certificates does not require a blockchain transaction.  The CA certificate referenced by the blockchain is valid for your Namecoin domain name and all subdomains, but you can add additional restrictions when issuing TLS certificates or subordinate CA certificates.  This allows you to limit the impact of key compromise.  For example:
+There are three modes of authenticating TLS certificates in Namecoin: *Compressed*, *Hashed*, and *Certified*.
+
+* Compressed mode is deprecated, and support will be removed in Encaya v0.2 and ncgencert v1.19. It uses more blockchain storage than either Hashed or Certified.
+* Hashed mode will be supported from Encaya v0.2 and ncgencert v1.19 onwards. It uses more blockchain storage than Certified (and therefore incurs higher fees), but is more resistant to long-range quantum attacks. It works with names owned by any address type.
+* Certified mode will be supported from Encaya v0.2 and ncgencert v1.19 onwards. It uses no blockchain storage, but is more vulnerable to long-range quantum attacks. It only works with names owned by P2PKH addresses.
+
+In Compressed or Hashed mode, the blockchain stores the public key of a *CA certificate* (certificate authority certificate) that you've created. In Certified mode, the CA certificate contains a signature from your Namecoin key, with nothing about the certificate stored on-chain. Either way, you can use that CA certificate to *issue* TLS certificates, or issue additional CA certificates (referred to as *subordinate CA certificates*).  Issuing TLS certificates or subordinate CA certificates does not require a blockchain transaction.  The CA certificate authenticated by the blockchain is valid for the Namecoin domain or subdomain that you created it for, as well as all subdomains; you can add additional restrictions when issuing TLS certificates or subordinate CA certificates.  This allows you to limit the impact of key compromise.  For example:
 
 * You can issue TLS certificates (which will be deployed to a public-facing TLS server) with a short expiration time, while keeping the CA certificate and its private key (with a longer expiration time) on an offline machine.  You can then rotate keys by issuing a new TLS certificate periodically.  This means that if your TLS server is temporarily compromised and its private key is stolen, the situation will resolve itself the next time you rotate TLS certificates.
 * You can issue TLS certificates that are only valid for certain subdomains.  For example, if you have multiple physical servers that each handle a different subset of your subdomains, you can give each of them its own TLS certificate, and a compromised server won't be able to impersonate the others.
@@ -21,7 +27,9 @@ In Namecoin, the blockchain stores the public key of a *CA certificate* (certifi
 
 ## Example: The Basics
 
-To create a CA certificate for your Namecoin domain, run the following:
+### Compressed
+
+To create a Compressed-mode CA certificate for your Namecoin domain, run the following:
 
 ~~~
 mkdir example.bit-ca
@@ -63,6 +71,55 @@ The JSON value contained in `namecoin.json` should be enclosed in an array, and 
 ~~~
 
 If your Namecoin domain has no subdomains, you can just load `chain.pem` and `key.pem` into your TLS server (e.g. Caddy, Nginx, or Apache), and you're done.  That was easy.
+
+### Hashed
+
+To create a Hashed-mode CA certificate for your Namecoin domain, run the following:
+
+~~~
+mkdir example.bit-ca
+pushd example.bit-ca
+ncgencert -host example.bit
+popd
+~~~
+
+(The directory names in these examples are arbitrary and are just intended to make the examples more clear; you can use whatever directory structure you like.)
+
+The following files will be created in the `example.bit-ca` directory:
+
+* `caChain.pem`: Certificate chain for issuing TLS certificates or subordinate CA's.
+* `caKey.pem`: Private key for issuing TLS certificates or subordinate CA's.
+* `chain.pem`: TLS certificate chain.
+* `key.pem`: TLS private key.
+* `namecoin.json`: TLSA record to enter in your Namecoin wallet.
+
+(A few other files will be created too, but you don't need to worry about them.)
+
+The JSON value contained in `namecoin.json` should be enclosed in an array, and placed in the `tls` field for the `*` subdomain of your eTLD+1 domain name.  For example:
+
+~~~
+{
+    "ip": "73.239.16.12",
+    "map": {
+        "*": {
+            "tls": [
+                [
+                    2,
+                    1,
+                    1,
+                    "lwgh9/tFjVQaaY5MSbxo1piMg/NOm+pmHZfSuX50DEU="
+                ]
+            ]
+        }
+    }
+}
+~~~
+
+If your Namecoin domain has no subdomains, you can just load `chain.pem` and `key.pem` into your TLS server (e.g. Caddy, Nginx, or Apache), and you're done.  That was easy.
+
+### Certified
+
+Certified-mode documentation is not yet available, check back soon.
 
 ## Example: Renewing a TLS Certificate
 
@@ -156,6 +213,41 @@ popd
 You'll get a new `caChain.pem` in the `www.example.bit-renew-ca` directory.  You'll then need to add the new `caChain.pem`'s contents to the `chain.pem` and/or `caChain.pem` of any TLS certificates or subordinate CA certificates that you previously issued with this CA, and update the `chain.pem` files on your TLS server accordingly.
 
 You don't need to do anything in your Namecoin wallet (or pay any fees) when renewing subordinate CA certificates, because Namecoin TLS uses layer 2.
+
+## Example: Issuing a Non-Subordinate CA Certificate for a Subdomain
+
+If you do not want to issue a CA Certificate for your eTLD+1 domain (perhaps because your eTLD+1 domain is owned by a smart contract whose semantics cannot be acceptably approximated by an ECDSA key), you can issue a non-subordinate CA Certificate for a subdomain. Just pass the subdomain to the `-host` flag, like this:
+
+~~~
+mkdir www.example.bit-ca
+pushd www.example.bit-ca
+ncgencert -host www.example.bit
+popd
+~~~
+
+If you're using Compressed or Hashed mode, the resulting TLSA record goes in the `*` subdomain of whatever subdomain you passed to `-host`, like this:
+
+~~~
+{
+    "map": {
+        "www": {
+            "ip": "73.239.16.12",
+            "map": {
+                "*": {
+                    "tls": [
+                        [
+                            2,
+                            1,
+                            1,
+                            "lwgh9/tFjVQaaY5MSbxo1piMg/NOm+pmHZfSuX50DEU="
+                        ]
+                    ]
+                }
+            }
+        }
+    }
+}
+~~~
 
 ## Example: Renewing a Non-Subordinate CA Certificate without Rotating Keys
 
