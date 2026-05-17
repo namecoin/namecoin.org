@@ -291,6 +291,83 @@ When issuing certificates, you can change the expiration date via the `-duration
 
 Ideally, you've picked validity periods that are short enough that you can just wait for certificates to expire when you rotate keys.  However, in the event of emergency (e.g. you have credible reason to believe that your keys have been compromised), you can revoke your keys by deleting the TLS record from the blockchain in your Namecoin wallet (which will incur a transaction fee).  You will need to start over and re-issue all TLS certificates and subordinate CA certificates.
 
+## Where to Place the `tls` Record
+
+Namecoin clients walk the JSON tree from your eTLD+1 record downward when resolving a host.  A `tls` field at a deeper level **overrides** any inherited `tls` field for that branch; clients do not merge the two.  Pick one of these patterns per zone.
+
+### Pattern A: single CA for the whole zone (recommended)
+
+Place the TLSA once at `map["*"].tls` of the apex name, and let the wildcard cover every host in the zone, at any depth:
+
+~~~
+{
+    "ip": "203.0.113.10",
+    "map": {
+        "*": {
+            "tls": [
+                [
+                    2,
+                    1,
+                    1,
+                    "<base64-of-SHA-256-of-CA-SPKI>"
+                ]
+            ]
+        }
+    }
+}
+~~~
+
+Every host in the zone is then expected to present a chain that terminates at this CA.  No further `tls` records anywhere in the tree.  This minimizes on-chain bytes and avoids the wildcard-inheritance pitfall described in Pattern B.
+
+### Pattern B: subdomain pinned to a different CA
+
+If a specific subdomain must be served by a *different* CA (for example, because a different party controls it and you haven't given them a subordinate CA), put a second TLSA at that subdomain.  If the subdomain itself has children that should also use the new CA, **re-pin the wildcard inside that subdomain**:
+
+~~~
+{
+    "ip": "203.0.113.10",
+    "map": {
+        "relay": {
+            "ip": "198.51.100.20",
+            "tls": [
+                [
+                    2,
+                    1,
+                    1,
+                    "<base64-of-SHA-256-of-relay-CA-SPKI>"
+                ]
+            ],
+            "map": {
+                "*": {
+                    "tls": [
+                        [
+                            2,
+                            1,
+                            1,
+                            "<base64-of-SHA-256-of-relay-CA-SPKI>"
+                        ]
+                    ]
+                }
+            }
+        },
+        "*": {
+            "tls": [
+                [
+                    2,
+                    1,
+                    1,
+                    "<base64-of-SHA-256-of-main-CA-SPKI>"
+                ]
+            ]
+        }
+    }
+}
+~~~
+
+Without the inner `map["*"].tls`, a deeper host such as `eu.relay.example.bit` would *not* fall back to `relay.example.bit`'s pin; it would walk back up to the outer wildcard and validate against the **main** CA instead of the relay CA, which is almost certainly not what you want.
+
+If you find yourself reaching for Pattern B because two CAs already exist in your zone, consider consolidating onto one CA first; see *Example: Issuing a TLS Certificate for a Subdomain* and the subordinate-CA section above.
+
 ## TLS and NS Records
 
 Remember that if you have an NS record at or above the TLS record in the blockchain, the TLS record will be suppressed.
