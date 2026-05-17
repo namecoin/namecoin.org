@@ -9,7 +9,7 @@ TLS (*Transport Layer Security*) is the "S" in HTTPS.  All websites using Nameco
 
 ## Prerequisites
 
-You should install the latest release of [the `generate_nmc_cert` tool]({{ "/download/betas/#generate_nmc_cert" | relative_url }}).  You may also want to install the latest release of the [ncdns]({{ "/docs/ncdns/" | relative_url }}) Windows installer, to test that your certificates work.
+You should install the latest release of [the `generate_nmc_cert` tool]({{ "/download/betas/#generate_nmc_cert" | relative_url }}).  (`generate_nmc_cert` has since been renamed to `ncgencert`; on systems with the newer release, every `generate_nmc_cert` command below can be run as `ncgencert` without the `-use-ca` flag.  Hashed-mode examples below already use `ncgencert` directly.)  You may also want to install the latest release of the [ncdns]({{ "/docs/ncdns/" | relative_url }}) Windows installer, to test that your certificates work.
 
 ## Concepts
 
@@ -24,6 +24,17 @@ In Compressed or Hashed mode, the blockchain stores the public key of a *CA cert
 * You can issue TLS certificates (which will be deployed to a public-facing TLS server) with a short expiration time, while keeping the CA certificate and its private key (with a longer expiration time) on an offline machine.  You can then rotate keys by issuing a new TLS certificate periodically.  This means that if your TLS server is temporarily compromised and its private key is stolen, the situation will resolve itself the next time you rotate TLS certificates.
 * You can issue TLS certificates that are only valid for certain subdomains.  For example, if you have multiple physical servers that each handle a different subset of your subdomains, you can give each of them its own TLS certificate, and a compromised server won't be able to impersonate the others.
 * You can issue subordinate CA certificates that are only valid for certain subdomains.  This allows you to give a third party the ability to create TLS certificates for a specific subdomain, without letting them impact the security of the rest of your Namecoin domain.
+
+### Mental Model: What's Pinned vs. What's Local
+
+Only one thing ever lands on the blockchain: a `TLSA` array identifying your **CA certificate**.  In Hashed mode this is `[2, 1, 1, "<base64-of-SHA-256-of-CA-SPKI>"]`; in Compressed mode it's `[2, 1, 0, "<base64-of-CA-SPKI>"]`.  Either way, the **CA private key**, the **end-entity certificate**, and the **end-entity private key** all live only on your machines and never touch the chain.
+
+This has two practical consequences that are worth internalizing before you read the examples below:
+
+* **Renewing or replacing an end-entity certificate never needs a blockchain transaction.**  Only the CA public key is pinned on chain, and that public key does not change when you mint a new leaf.
+* **One CA can sign many end-entity certificates**, one per server, all trusted under the same on-chain `TLSA`.  Each server holds only its own end-entity private key, so a compromise of one server cannot impersonate the others.  See *Example: Issuing a TLS Certificate for a Subdomain* below.
+
+Keep the CA's `caKey.pem` on an offline workstation.  Bring it online only when you're issuing a new leaf or sub-CA, and put it back when you're done.
 
 ## Example: The Basics
 
