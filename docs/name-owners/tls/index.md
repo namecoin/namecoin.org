@@ -264,6 +264,38 @@ You'll get a new `caChain.pem` in the `example.bit-renew-ca` directory.  You'll 
 
 You don't need to do anything in your Namecoin wallet (or pay any fees) when renewing non-subordinate CA certificates, because Namecoin TLS uses layer 2.
 
+## Example: Consolidating Two CAs Into One
+
+A zone can accumulate an extra CA over time -- for example, a subdomain was originally pinned to its own CA, and you've since decided you'd rather run everything under a single CA.  You can consolidate without rotating the surviving CA's key (so its on-chain TLSA pin doesn't change) by re-issuing the relevant end-entity certificates from the surviving CA and then removing the subdomain-scoped TLSA from your wallet.
+
+1. On the offline workstation, verify that the CA you're keeping matches the on-chain pin:
+
+   ~~~
+   openssl x509 -in example.bit-ca/caChain.pem -pubkey -noout \
+     | openssl pkey -pubin -outform DER \
+     | openssl dgst -sha256 -binary \
+     | base64
+   ~~~
+
+   Compare the output against the base64 string in the `[2, 1, 1, "…"]` TLSA value you have on chain.  If they don't match, stop -- you don't have the right CA private key.
+
+2. Mint a new end-entity certificate for each server currently signed by the CA you're retiring, using the surviving CA:
+
+   ~~~
+   mkdir relay-tls
+   pushd relay-tls
+   ncgencert -host relay.example.bit,*.relay.example.bit \
+     -parent-chain ../example.bit-ca/caChain.pem \
+     -parent-key   ../example.bit-ca/caKey.pem
+   popd
+   ~~~
+
+3. Deploy the new `chain.pem` + `key.pem` to the relevant server and reload the TLS daemon.  **Do this before step 4** -- Namecoin-aware clients will still pin the old CA for that subdomain until step 4 lands.
+
+4. In your wallet, remove the subdomain-scoped `tls` record (and any inner wildcard pinning the old CA).  The host then walks up to the apex `map["*"].tls`, which already points at the surviving CA.  This is the only blockchain transaction in the process.
+
+5. After the update confirms, retire the old CA's private key offline.  Until you're confident the old CA is no longer pinned anywhere, archive it -- don't delete it.
+
 ## Can I Renew a TLS Certificate without Rotating Keys?
 
 No; TLS server keys (in contrast to CA keys) should always be rotated after expiration for security reasons.
@@ -271,6 +303,45 @@ No; TLS server keys (in contrast to CA keys) should always be rotated after expi
 ## Testing Your Website
 
 The best way to test your website is to try visiting it on a Windows 10 installation after running the ncdns for Windows installer.  It should load without errors.
+
+### Verifying Your Deployment with `openssl`
+
+Before (or after) pushing a `name_update`, you can verify what your server is actually presenting on the wire.
+
+Confirm that the served chain ends in the CA you expect:
+
+~~~
+openssl s_client -connect example.bit:443 -servername example.bit \
+    -showcerts </dev/null 2>/dev/null \
+  | openssl x509 -noout -text
+~~~
+
+Extract just the CA (root) certificate from the chain and hash its SPKI to compare against your on-chain TLSA value:
+
+~~~
+openssl x509 -in example.bit-ca/caChain.pem -pubkey -noout \
+  | openssl pkey -pubin -outform DER \
+  | openssl dgst -sha256 -binary \
+  | base64
+~~~
+
+The output is the base64 string that should appear (or already does appear) inside the `[2, 1, 1, "…"]` TLSA value in your wallet.
+
+Confirm that the end-entity certificate has the right Subject Alternative Names and the required Subject Serial Number:
+
+~~~
+openssl s_client -connect example.bit:443 -servername example.bit </dev/null 2>/dev/null \
+  | openssl x509 -noout -text \
+  | grep -E 'Subject:|DNS:|Serial Number'
+~~~
+
+The Subject Serial Number must be `Namecoin TLS Certificate` (`ncgencert` / `generate_nmc_cert` set this automatically).
+
+Finally, confirm the served chain validates against your CA in isolation, without trusting the system root store:
+
+~~~
+openssl verify -CAfile example.bit-ca/caChain.pem chain.pem
+~~~
 
 ## Selecting the Elliptic Curve
 
