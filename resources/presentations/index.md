@@ -75,6 +75,10 @@ title: Presentations
 
 [Videos and slides are here.]({{ "/2016/07/03/decentralized-web-summit.html" | relative_url }})
 
+## Borderless Block Party 2015
+
+[Hackathon writeup is here.](Borderless_Block_Party_2015/)
+
 ## Grazer Linuxtage 2015
 
 [Video is here.]({{ "/2019/04/20/daniel-kraft-at-grazer-linuxtage-2015-video.html" | relative_url }})
