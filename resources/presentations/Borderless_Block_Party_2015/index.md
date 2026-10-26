@@ -59,7 +59,7 @@ A typical x.509 certificate is often in the range of 2 to 3 KB.  A Namecoin name
 4. ECDSA public key specified by the name value.  Note that we do not support RSA keys, because ECDSA has smaller keys and signatures.
 5. ECDSA signature specified by the name value.
 6. CA bit disabled; the certificate is only usable as an end entity certificate.
-7. KeyUsage hardcoded to "DigitalSignature".  Note that we disallow "KeyEncipherment" because that is only used for RSA key exchange (no forward secrecy), and everyone should be using DHE/ECDHE key exchange (which has forward secrecy) now. 
+7. KeyUsage hardcoded to "DigitalSignature".  Note that we disallow "KeyEncipherment" because that is only used for RSA key exchange (no forward secrecy), and everyone should be using DHE/ECDHE key exchange (which has forward secrecy) now.
 8. Subject serial number of "Namecoin TLS Certificate".  This is so that if an end user comes across one of our certificates in his or her trust store later, it will be obvious where it came from.
 9. Everything else at the default best practices for TLS server certificates.
 
@@ -78,7 +78,7 @@ We have provided a command-line tool for generating these certificates, resultin
     2015/11/26 02:42:22 SUCCESS: The cert decompressed to an identical form.
 
 Making dehydrated certificates work properly in Golang was tricky, because the x.509 library functions which are needed to splice a signature into a certificate are private.  We ended up forking the x.509 package, and adding a single file to it which exposed the necessary functionality as a public function.
-    
+
 Credit for the idea of dehydrated certificates is due to Ryan Castellucci.
 
 ## HPKP
