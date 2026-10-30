@@ -5,11 +5,7 @@ title: Namecoin
 
 {::options parse_block_html="true" /}
 
-**Namecoin** is an experimental open-source technology which improves decentralization, security, censorship resistance, privacy, and speed of certain components of the Internet infrastructure such as DNS and identities.
-
-(For the technically minded, Namecoin is a key/value pair registration and transfer system based on the Bitcoin technology.)
-
-*Bitcoin frees money – Namecoin frees DNS, identities, and other technologies.*
+**Namecoin** is a peer-to-peer naming system, like DNS. It is secure, censorship-resistant, and human-readable. Namecoins are also the decentralized currency (based on Bitcoin) that are used to buy these names. It was the first altcoin, with development started in 2011.
 
 <div class="row">
 
