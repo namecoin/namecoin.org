@@ -319,6 +319,12 @@ For example, the following configuration will **not** work:
 
 All TLS 1.3 cipher suites will work with Namecoin.  If you must use TLS 1.2 or lower, your TLS server will need to support an appropriate cipher suite, such as one of the `ECDHE-ECDSA` cipher suites.  If possible, please avoid using TLS 1.2 or lower (with or without Namecoin), as they are outdated and insecure.
 
+## Conserving Blockchain Space
+
+Namecoin name values are capped at 520 bytes total (see [the FAQ entry on what Namecoin is well-suited for]({{ "/docs/faq/#what-applications-is-namecoin-well-suited-to" | relative_url }})).  A Compressed-mode TLSA record (`[2, 1, 0, "<base64-of-full-SPKI-DER>"]`) consumes roughly 80–120 bytes per record; a Hashed-mode TLSA record (`[2, 1, 1, "<base64-of-SHA-256>"]`) consumes roughly 50 bytes per record.  Hashed mode therefore leaves substantially more headroom in your name value for `ip`, `map`, `ns`, `import`, and other fields, which is a useful tiebreaker on top of the security tradeoffs listed in **Concepts**.
+
+If your zone is close to the 520-byte limit even with Hashed mode, factor common subtrees out into a paired `dd/` name and pull them in from the `d/` name via `import`.  See [Delegated Alteration]({{ "/docs/name-owners/delegated-alteration" | relative_url }}) for the mechanics; keeping the `tls` field in the `d/` name and the bulkier records in the `dd/` name is a good default that also limits the blast radius if the `dd/` name is stolen.
+
 ## Using Your Own Tooling
 
 If you prefer, you can issue subordinate CA certificates and TLS certificates using your own CA tooling.  Just point your tooling to the CA certificate and CA private key.  You should make sure that any certificates that you issue with your own tooling contain the Subject Serial Number `Namecoin TLS Certificate`.
