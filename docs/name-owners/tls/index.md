@@ -175,6 +175,61 @@ But the following will not work:
 
 You don't need to do anything in your Namecoin wallet (or pay any fees) when issuing TLS certificates for subdomains, because Namecoin TLS uses layer 2.
 
+## Example: Multiple TLS Servers Sharing One CA
+
+This is the common case for any non-trivial deployment: you run several physical or virtual machines, each serving a different subset of your subdomains, and you want each of them to have its own end-entity certificate so that a single compromised host can't impersonate the others.
+
+Suppose `example.bit` runs on three machines:
+
+* `example.bit` and `www.example.bit` on machine A (the apex).
+* `api.example.bit` on machine B.
+* `relay.example.bit` on machine C, which also serves `*.relay.example.bit`.
+
+Create the CA **once**, on an offline workstation (using Hashed mode here; substitute `generate_nmc_cert -use-ca` if you're on Compressed mode):
+
+~~~
+mkdir example.bit-ca
+pushd example.bit-ca
+ncgencert -host example.bit
+popd
+~~~
+
+Place the TLSA array from `namecoin.json` in your wallet at the `tls` field of the `*` subdomain of `example.bit` (see *Example: The Basics*).  This is the only blockchain transaction you'll do.
+
+Then, still on the offline workstation, issue one end-entity certificate per machine:
+
+~~~
+# Machine A: apex + www
+mkdir machineA-tls
+pushd machineA-tls
+ncgencert -host example.bit,www.example.bit \
+  -parent-chain ../example.bit-ca/caChain.pem \
+  -parent-key   ../example.bit-ca/caKey.pem
+popd
+
+# Machine B: api only
+mkdir machineB-tls
+pushd machineB-tls
+ncgencert -host api.example.bit \
+  -parent-chain ../example.bit-ca/caChain.pem \
+  -parent-key   ../example.bit-ca/caKey.pem
+popd
+
+# Machine C: relay + everything under it
+mkdir machineC-tls
+pushd machineC-tls
+ncgencert -host relay.example.bit,*.relay.example.bit \
+  -parent-chain ../example.bit-ca/caChain.pem \
+  -parent-key   ../example.bit-ca/caKey.pem
+popd
+~~~
+
+Copy each `chain.pem` + `key.pem` pair to the matching machine and reload your TLS server (Caddy, Nginx, Apache, etc.).  Each machine now holds only its own end-entity private key.  A compromise of machine B's key allows impersonation of `api.example.bit` only, because the CA itself never leaves the offline workstation.
+
+When any leaf nears expiry, repeat the relevant `ncgencert` block above and redeploy.  No blockchain transaction is required, because all of these end-entity certificates chain up to the single on-chain CA pin.
+
+If one of those machines is operated by someone you don't fully trust (for example, a third-party relay operator), give them a *subordinate* CA for their subdomain instead of repeatedly minting leaves on their behalf.  See the next section.
+
 ## Example: Issuing a Subordinate CA Certificate for a Subdomain
 
 Issuing a subordinate CA certificate works like above, except you use the `-grandparent-chain` and `-grandparent-key` flags instead of `-parent-chain` and `-parent-key`, like this:
