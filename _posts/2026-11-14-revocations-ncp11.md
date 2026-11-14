@@ -2,6 +2,7 @@
 layout: post
 title: "Revocations in ncp11"
 author: Jeremy Rand
+date:   2026-11-14 00:00:00 +0000
 tags: [News]
 ---
 
