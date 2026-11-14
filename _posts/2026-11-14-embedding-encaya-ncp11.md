@@ -15,12 +15,12 @@ An incidental benefit here is that `encayagen` is embedded inside ncp11 as well,
 So how does the size improvement stack up?
 
 * **Before**:
-    * libncp11.so: 10.3 MiB
-    * encaya: 18.9 MiB
-    * encayagen: 13.5 MiB
+    * `libncp11.so`: 10.3 MiB
+    * `encaya`: 18.9 MiB
+    * `encayagen`: 13.5 MiB
     * **Total**: 42.8 MiB
 * **After**:
-    * libncp11+encaya.so: 14.4 MiB
+    * `libncp11+encaya.so`: 14.4 MiB
 
 That's a size ratio of 2.97x! Not a bad result.
 
